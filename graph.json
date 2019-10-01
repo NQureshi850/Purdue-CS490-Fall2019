@@ -1,5 +1,5 @@
 {"nodes":[
-  {"character": "Pyramid [131]", "id": 0, "influence": 2, "zone": 0},
+  {"character": "Pyramid [131]", "id": 0, "influence": 2, "zone": 0, "x": 50, "y": 20},
   {"character": "Linearized kd-trie [102]", "id": 1, "influence": 1.0, "zone": 1},
   {"character": "Binary Tree [64]", "id": 2, "influence": 1.0, "zone": 2},
   {"character": "MOVIES [37]", "id": 3, "influence": 7, "zone": 1},
@@ -14,13 +14,13 @@
   {"character": "Elite [152]", "id": 12, "influence": 1.9, "zone": 3}
   ],
 "links":[
-  {"source": 0, "target": 5, "weight": 4},
-  {"source": 0, "target": 6, "weight": 4},
-  {"source": 0, "target": 7, "weight": 4},
-  {"source": 1, "target": 3, "weight": 4},
-  {"source": 2, "target": 4, "weight": 4},
-  {"source": 2, "target": 8, "weight": 4},
-  {"source": 11, "target": 9, "weight": 4},
-  {"source": 11, "target": 10, "weight": 4},
-  {"source": 11, "target": 12, "weight": 4}
+  {"source": 0, "target": 5, "weight": 7},
+  {"source": 0, "target": 6, "weight": 7},
+  {"source": 0, "target": 7, "weight": 7},
+  {"source": 1, "target": 3, "weight": 7},
+  {"source": 2, "target": 4, "weight": 7},
+  {"source": 2, "target": 8, "weight": 7},
+  {"source": 11, "target": 9, "weight": 7},
+  {"source": 11, "target": 10, "weight": 7},
+  {"source": 11, "target": 12, "weight": 7}
   ]}

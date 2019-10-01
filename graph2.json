@@ -1,0 +1,47 @@
+{
+  "name": "dummy",
+  "children": [
+    {
+      "name": "Pyramid [131]",
+      "children":[
+        {
+          "name": "Mercury [86]"
+        },{
+          "name": "GAT [166]"
+        },{
+          "name": "Geo Trend [85]"
+        }
+      ]
+    },
+    {
+      "name": "Linearized kd-trie [102]",
+      "children": [
+        {
+          "name": "MOVIES [37]"
+        }
+      ]
+    },
+    {
+      "name": "Binary Tree [64]",
+      "children": [
+        {
+          "name": "Polar Tree [104]"
+        },{
+          "name": "Sim-Tree [157]"
+        }
+      ]
+    },
+    {
+      "name": "OCTree [59]",
+      "children": [
+        {
+          "name": "IOC-tree [54]"
+        },{
+          "name": "QaDr [53]"
+        },{
+          "name": "Elite [152]"
+        }
+      ]
+    }
+  ]
+}

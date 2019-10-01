@@ -47,7 +47,7 @@
 						.size([width, height])
 						.nodes(nodes)
 						.links(links)
-						.gravity(0.05)
+						.gravity(0.10)
 						.charge(-200)
 						.linkDistance(200);
 		//Add links to SVG
@@ -62,8 +62,8 @@
 					.data(nodes)
 					.enter()
 					.append("g")
-					.attr("class", "node")
-					.call(force.drag);
+					.attr("class", "node");
+					//.call(force.drag);
 		//Add labels to each node
 		var label = node.append("text")
 						.attr("dx", 12)
