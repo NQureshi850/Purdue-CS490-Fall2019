@@ -3,7 +3,7 @@
 <style>
 
 .node circle {
-  fill: #999;
+  fill: #560;
 }
 
 .node text {
@@ -21,7 +21,7 @@
 .link {
   fill: none;
   stroke: #555;
-  stroke-opacity: 0.4;
+  stroke-opacity: 4;
   stroke-width: 1.5px;
 }
 
@@ -37,14 +37,14 @@ label {
 }
 
 </style>
-<svg width="960" height="2400"></svg>
+<svg width="1800" height="3500"></svg>
 <script src="//d3js.org/d3.v4.min.js"></script>
 <script>
 
 var svg = d3.select("svg"),
     width = +svg.attr("width"),
     height = +svg.attr("height"),
-    g = svg.append("g").attr("transform", "translate(40,0)");
+    g = svg.append("g").attr("transform", "translate(0,0)");
 
 var tree = d3.tree()
     .size([height - 400, width - 160]);
@@ -74,10 +74,45 @@ d3.json("graph2.json", function(dataset) {
       .attr("r", 2.5);
 
   node.append("text")
-      .attr("dy", "0.31em")
-      .attr("x", 12)
+      .attr("dy", function(d){return d.children ? "1.4em" : ".6em"})
+      .attr("x", function(d){ return d.children ? 55 : 10; })
       .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
       .text(d => d.data.name);
+
+  // var couplingParent1 = cluster.nodes(root).filter(function(d) {
+  //           return d['name'] === '';
+  //       })[0];
+	// var couplingChild1 = cluster.nodes(root).filter(function(d) {
+  //           return d['name'] === '';
+  //       })[0];
+  //
+	// multiParents = [{
+  //                   parent: couplingParent1,
+  //                   child: couplingChild1
+  //               }];
+  //
+	// multiParents.forEach(function(multiPair) {
+  //           svgGroup.append("path", "g")
+  //           .attr("class", "additionalParentLink")
+  //               .attr("d", function() {
+  //                   var oTarget = {
+  //                       x: multiPair.parent.x0,
+  //                       y: multiPair.parent.y0
+  //                   };
+  //                   var oSource = {
+  //                       x: multiPair.child.x0,
+  //                       y: multiPair.child.y0
+  //                   };
+  //                   /*if (multiPair.child.depth === multiPair.couplingParent1.depth) {
+  //                       return "M" + oSource.y + " " + oSource.x + " L" + (oTarget.y + ((Math.abs((oTarget.x - oSource.x))) * 0.25)) + " " + oTarget.x + " " + oTarget.y + " " + oTarget.x;
+  //                   }*/
+  //                   return diagonal({
+  //                       source: oSource,
+  //                       target: oTarget
+  //                   });
+  //               });
+  //       });
+
 
 });
 

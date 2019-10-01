@@ -6,9 +6,11 @@
       "children":[
         {
           "name": "Mercury [86]"
-        },{
+        },
+        {
           "name": "GAT [166]"
-        },{
+        },
+        {
           "name": "Geo Trend [85]"
         }
       ]
@@ -26,7 +28,8 @@
       "children": [
         {
           "name": "Polar Tree [104]"
-        },{
+        },
+        {
           "name": "Sim-Tree [157]"
         }
       ]
@@ -36,10 +39,402 @@
       "children": [
         {
           "name": "IOC-tree [54]"
-        },{
+        },
+        {
           "name": "QaDr [53]"
-        },{
+        },
+        {
           "name": "Elite [152]"
+        }
+      ]
+    },
+    {
+      "name": "R-tree [51]",
+      "children": [
+        {
+          "name": "Trajtree [112]"
+        },
+        {
+          "name": "P-tree [57]"
+        },
+        {
+          "name": "UTH [167]"
+        },
+        {
+          "name": "IRWI-tree [58]"
+        },
+        {
+          "name": "Chebyshev Polynomial [23]"
+        },
+        {
+          "name": "STLs [3]"
+        },
+        {
+          "name": "IMORS [63]"
+        },
+        {
+          "name": "RTR-tree [61]",
+          "children": [
+            {
+               "name": "TP2R-tree [61]"
+            }
+          ]
+        },
+        {
+          "name": "Composite Indoor [151]"
+        },
+        {
+          "name": "UTGRID [83]"
+        },
+        {
+          "name": "Linear Greedy [66]",
+          "children":[
+            {
+              "name": "Polynomial Greedy [52]",
+              "children":[
+                {
+                    "name": "PA-tree [100]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "LUR-tree [68]",
+          "children":[
+            {
+              "name": "FUR-tree [70]",
+              "children":[
+                {
+                  "name": "RUM-tree [153]",
+                  "children":[
+                    {
+                      "name": "Rum+-tree [171]"
+                    },
+                    {
+                      "name": "Trails-tree [88]"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MR-tree [150]",
+          "children":[
+            {
+              "name": "HR-tree [95]",
+              "children":[
+                {
+                  "name": "HR+-tree [133]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "3D R-tree [138]",
+          "children":[
+            {
+              "name": "MV3R-tree [134]"
+            },
+            {
+              "name": "FNR-tree [47]",
+              "children":[
+                {
+                  "name": "MON-tree [34]",
+                  "children":[
+                    {
+                      "name": "UTR-tree [36]"
+                    },
+                    {
+                      "name": "Gstree [69]"
+                    },
+                    {
+                      "name": "PPFI [43]"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "2+3 R-tree [96]",
+              "children":[
+                {
+                  "name": "2-3 TR-tree [1]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "R*-tree [14]",
+          "children":[
+            {
+              "name": "IFST [90]"
+            },
+            {
+              "name": "KR*-tree [55]",
+              "children":[
+                {
+                  "name": "GKR [90]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "RT-tree [150]",
+          "children":[
+            {
+              "name": "STR-tree [106]",
+              "children":[
+                {
+                  "name": "TB-tree [106]",
+                  "children":[
+                    {
+                      "name": "ITB-tree [168]"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TPR-tree [116]",
+          "children":[
+            {
+              "name": "PR-tree [21]"
+            },
+            {
+              "name": "NSI [108]"
+            },
+            {
+              "name": "VCI [109]"
+            },
+            {
+              "name": "Rexp [115]"
+            },
+            {
+              "name": "TPR*-tree [135]",
+              "children":[
+                {
+                  "name": "HTPR* [44]"
+                },
+                {
+                  "name": "S8TPR* [97]"
+                }
+              ]
+            },
+            {
+              "name": "Multiple TPR-trees [9]"
+            },
+            {
+              "name": "TPRU [73]"
+            },
+            {
+              "name": "STAR [110]"
+            },
+            {
+              "name": "Bdual-tree [161]"
+            },
+            {
+              "name": "MVTPR [158]"
+            },
+            {
+              "name": "CRTPR [94]"
+            },
+            {
+              "name": "VRTPR [93]"
+            },
+            {
+              "name": "Horizon [141]"
+            },
+            {
+              "name": "TPKDB [18]"
+            },
+            {
+              "name": "STP [132]"
+            },
+            {
+              "name": "sTPR [10]"
+            },
+            {
+              "name": "LGU [74]"
+            },
+            {
+              "name": "PCF* [80]"
+            },
+            {
+              "name": "ANR-tree [26]"
+            },
+            {
+              "name": "R-TPR+ [45]"
+            },
+            {
+              "name": "TPROM [35]"
+            },
+            {
+              "name": "Sstp [11]"
+            },
+            {
+              "name": "TPRuv [42]"
+            },
+            {
+              "name": "OST [139]"
+            },
+            {
+              "name": "GG TPR [71]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GRID [101]",
+      "children":[
+        {
+          "name": "D-Grid [155]"
+        },
+        {
+          "name": "PASTIS [113]"
+        },
+        {
+          "name": "TwinGrid [122]",
+          "children":[
+            {
+              "name": "Pgrid [124]"
+            }
+          ]
+        },
+        {
+          "name": "Concurrently Updatable Index [118]"
+        },
+        {
+          "name": "LU-Grid [154]"
+        },
+        {
+          "name": "AP*-tree [149]"
+        },
+        {
+          "name": "AFIA [127]"
+        },
+        {
+          "name": "RAC-tree [29]"
+        },
+        {
+          "name": "SWST [126]"
+        }
+      ]
+    },
+    {
+      "name": "Quadtree [46]",
+      "children":[
+        {
+          "name": "SFC-quadtree [31]"
+        },
+        {
+          "name": "ST-tree [79]"
+        },
+        {
+          "name": "Overlapped Quadtree [143]"
+        },
+        {
+          "name": "TrajStore [32]"
+        },
+        {
+          "name": "Future Quadtree [136]",
+          "children":[
+            {
+              "name": "STRIPES [103]"
+            }
+          ]
+        },
+        {
+          "name": "PH-tree [164]"
+        },
+        {
+          "name": "GiKi [165]"
+        }
+      ]
+    },
+    {
+      "name": "B-tree [12]",
+      "children":[
+        {
+          "name": "DITIR [22]"
+        },
+        {
+          "name": "MB-index [40]"
+        },
+        {
+          "name": "Bx-tree [60]",
+          "children":[
+            {
+              "name": "aBy-tree [27]"
+            },
+            {
+              "name": "By-tree [27]"
+            },
+            {
+              "name": "ST2B-tree [28]"
+            },
+            {
+              "name": "BdH-tree [120]"
+            },
+            {
+              "name": "BBx-index [75]"
+            },
+            {
+              "name": "PEB-tree [76]"
+            }
+          ]
+        },
+        {
+          "name": "STCB*-tree [78]"
+        },
+        {
+          "name": "FMI [82]",
+          "children":[
+            {
+              "name": "CFMI [82]"
+            }
+          ]
+        },
+        {
+          "name": "MPB-tree [56]"
+        },
+        {
+          "name": "K2-tree [19]",
+          "children":[
+            {
+              "name": "SMO [114]"
+            }
+          ]
+        },
+        {
+          "name": "Predictive distance table [62]"
+        },
+        {
+          "name": "PARINET [107]",
+          "children":[
+            {
+              "name": "T-PARINET [117]"
+            }
+          ]
+        },
+        {
+          "name": "TRIFL [137]"
+        }
+      ]
+    },
+    {
+      "name": "kd-tree [16]",
+      "children":[
+        {
+          "name": "STIG [39]"
         }
       ]
     }
