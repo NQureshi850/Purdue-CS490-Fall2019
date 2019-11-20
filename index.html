@@ -24,7 +24,7 @@
 
 			//-------------pyramid subtree-------------
 			draw.rect(20, 20).fill('black').move(50, 70)
-			draw.link("https://www.sciencedirect.com/science/article/pii/S0146664X75800037").text("Pyramid [131]").move(0, 40).font({fill:'black', family: 'Arial'})
+			draw.link("https://www.sciencedirect.com/science/article/pii/S0146664X75800037").text("Pyramid [131]").move(0, 40).font({fill:'blue', family: 'Arial'})
 
 			draw.line(60, 80,  200, 10).stroke({ color: 'black', width: 2})
 			draw.line(200, 10, 1700, 10).stroke({color:'black', width:2})
@@ -38,22 +38,37 @@
 				add.polyline('0,0 0,10 5,5').fill('black')
 				this.fill('#0f9')
 			})
-			draw.line(60, 80, 1400, 70).stroke({color:'black', width:2})
+			draw.line(60, 80, 1450, 70).stroke({color:'black', width:2})
 				.marker('end', 10, 10, function(add) {
 				add.polyline('0,0 0,10 5,5').fill('black')
 				this.fill('#0f9')
 			})
 
 			draw.polygon('1705,10 1715,0 1725,10 1715,20').fill('black')//GeoTrend
-			draw.link("https://dl.acm.org/citation.cfm?id=2996986").text("GeoTrend [85]").move(1730, 5).font({fill:'black', family: 'Arial'})
+			draw.link("https://dl.acm.org/citation.cfm?id=2996986").text("GeoTrend [85]").move(1730, 5).font({fill:'blue', family: 'Arial'})
 
 			draw.polygon('1505,40 1515,30 1525,40 1515,50').fill('black')//Mercury
-			draw.link("https://experts.umn.edu/en/publications/mercury-a-memory-constrained-spatio-temporal-real-time-search-on-/").text("Mercury [86]").move(1530, 30).font({fill:'black', family: 'Arial'})
+			draw.link("https://experts.umn.edu/en/publications/mercury-a-memory-constrained-spatio-temporal-real-time-search-on-/").text("Mercury [86]").move(1530, 30).font({fill:'blue', family: 'Arial'})
 
-			draw.polygon('1405,70 1415,60 1425,70 1415,80').fill('black')//Mercury
-			draw.link("https://ieeexplore.ieee.org/document/6544828").text("GAT [166]").move(1430, 60).font({fill:'black', family: 'Arial'})
+			draw.polygon('1455,70 1465,60 1475,70 1465,80').fill('black')//GAT
+			//draw.link.to("https://ieeexplore.ieee.org/document/6544828").target("_blank").text("GAT [166]").move(1480, 60).font({fill:'blue', family: 'Arial'})
+			draw.text("GAT [166]").move(1480, 60).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open().
+					document.write('https://ieeexplore.ieee.org/document/6544828 \n
+					K. Zheng, S. Shang, N. J. Yuan, and Y. Yang. To-
+wards efficient search for activity trajectories. In The
+IEEE International Conference on Data Engineering
+(ICDE’13), pages 230–241. IEEE, 2013.')})
+			//-----------------------------------------
 
-
+			//----------Linearized kd-trie subtree-------
+			draw.line(60, 120,  1200, 120).stroke({ color: 'black', width: 2})
+				.marker('end', 10, 10, function(add) {
+				add.polyline('0,0 0,10 5,5').fill('black')
+				this.fill('#0f9')
+			})
+			draw.link("https://dl.acm.org/citation.cfm?id=588037").text("Linearized kd-trie [102]").move(20, 100).font({fill:'blue', family: 'Arial'})
+			//textbox - 3 links -> citation, full paper, pdf (if available)
 
 		</script>
 	</body>
