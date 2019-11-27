@@ -4,6 +4,9 @@
 	<head>
 <svg id="drawing" width="1850" height="3500"></svg>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/svg.js/2.7.1/svg.js"></script>
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+			  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+			  crossorigin="anonymous"></script>
 		<style>
 			body{ font: Arial 12px; text-align: center;}
 			.popup {
@@ -43,6 +46,61 @@
 
 	<body>
 		<script type="text/javascript">
+
+			var pdfArray = []
+			/*var xobj = new XMLHttpRequest()
+			xobj.open("GET", "pdfs.json", false)
+			xobj.onreadystatechange = function()
+			{
+					if(this.readyState == 4 && this.status == 200)
+					{
+						pdfArray.push(JSON.parse(this.responseText))
+					}
+			}
+			xobj.send()
+			*/
+
+			$.ajax({
+				url : 'pdfs.json',
+				type : 'GET',
+				dataType:'json',
+				success : function(pdf_array) {
+        	console.log('Bro, here\'s the pdf_array in (non-stringified) object form you asked about', pdf_array);
+    		}
+			})
+
+
+			console.log(pdfArray)
+
+			var linksArray = []
+
+			var xobj = new XMLHttpRequest()
+			xobj.open("GET", "links.json", false)
+			xobj.onreadystatechange = function()
+			{
+					if(this.readyState == 4 && this.status == 200)
+					{
+						linksArray.push(JSON.parse(this.responseText))
+					}
+			}
+			xobj.send()
+
+			var referenceArray = []
+
+			var xobj = new XMLHttpRequest()
+			xobj.open("GET", "references.json", false)
+			xobj.onreadystatechange = function()
+			{
+					if(this.readyState == 4 && this.status == 200)
+					{
+						referenceArray.push(JSON.parse(this.responseText))
+					}
+			}
+			xobj.send()
+			//console.log(referenceArray[0]["[1]"] + "\n" + linksArray[0]["[1]"] + "\n" + pdfArray[0]["[1]"])
+
+
+			//console.log(pdfArray[1]["[3]"])
 
 			var draw = SVG('drawing')
 
