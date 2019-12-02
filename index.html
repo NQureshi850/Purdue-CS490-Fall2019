@@ -687,7 +687,7 @@
 					document.write(linksArray["[43]"] + "<br>" + referencesArray["[43]"] + "<br>" + pdfsArray["[43]"])})
 
 				//[47]-[26]
-				var fnrtreeToANRtree = draw.polyline([60,900,  280,900, 450,800, 1000,1210]).stroke({ color: 'black', width: 2}).fill('none')
+				var fnrtreeToANRtree = draw.polyline([60,900,  280,900, 650,830, 1000,1210]).stroke({ color: 'black', width: 2}).fill('none')
 					.marker('end', 10, 10, function(add) {
 					add.polyline('0,0 0,10 5,5').fill('black')
 					this.fill('#0f9')
@@ -704,7 +704,7 @@
 				//R*-tree
 				draw.rect(20,20).fill('black').move(190, 980)
 				.on('click', function(){(r3Line1.attr("stroke")=="black") ? r3Line1.stroke({'color':"red","width":4}) : r3Line1.stroke({'color':"black","width":2})})
-				draw.text("R*-tree [14]").move(180, 960).font({fill:'blue', family: 'Arial'})
+				draw.text("R*-tree [14]").move(180, 1000).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[14]"] + "<br>" + referencesArray["[14]"] + "<br>" + pdfsArray["[14]"])})
 
@@ -715,21 +715,20 @@
 				})
 
 				//KR*-tree
-				draw.polyline([1020,980, 1035,990, 1020,1000, 1020, 980]).stroke({ color: 'black', width: 2}).fill('white')
+				draw.polyline([1020,980, 1035,990, 1020,1000, 1020,980]).stroke({ color: 'black', width: 2}).fill('white')
 				.on('click', function(){(r3Line3.attr("stroke")=="black") ? r3Line3.stroke({'color':"red","width":4}) : r3Line3.stroke({'color':"black","width":2})})
 				draw.text("KR*-tree [55]").move(1020, 960).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[55]"] + "<br>" + referencesArray["[55]"] + "<br>" + pdfsArray["[55]"])})
 
-				//[55]-[90]
-				var r3Line4 = draw.polyline([60,900,  190,990, 1020,990, 1630, 1090]).stroke({ color: 'black', width: 2}).fill('none')
+				var rtreeToGKR = draw.polyline([60,900,  190,990, 1040,990, 1630,1090]).stroke({ color: 'black', width: 2}).fill('none')
 					.marker('end', 10, 10, function(add) {
 					add.polyline('0,0 0,10 5,5').fill('black')
 					this.fill('#0f9')
 				})
 
 				//[14]-[90]
-				var r3Line5 = draw.polyline([60,900,  200,950]).stroke({ color: 'black', width: 2}).fill('none')
+				var rtreeToIFST = draw.polyline([60,900,  190,990, 250,960, 950,960, 1630,1450]).stroke({ color: 'black', width: 2}).fill('none')
 					.marker('end', 10, 10, function(add) {
 					add.polyline('0,0 0,10 5,5').fill('black')
 					this.fill('#0f9')
@@ -852,14 +851,14 @@
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[169]"] + "<br>" + referencesArray["[169]"] + "<br>" + pdfsArray["[169]"])})
 
-				var tsLine6 = draw.polyline([80,1210,  430,1210, 430,1090, 1750, 1000]).stroke({ color: 'black', width: 2}).fill('none')
+				var tsLine6 = draw.polyline([80,1210,  430,1210, 430,1090, 1750,1000]).stroke({ color: 'black', width: 2}).fill('none')
 					.marker('end', 10, 10, function(add) {
 					add.polyline('0,0 0,10 5,5').fill('black')
 					this.fill('#0f9')
 				})
 
 				//ITB-tree
-				draw.circle(20).fill('black').move(1750, 990)
+				draw.polygon('1750,1000 1760,990 1770,1000, 1760,1010, 1750,1000').fill('black').move(1750, 990)
 				.on('click', function(){
 					if (tsLine6.attr("stroke")=="black") {
 						tsLine6.stroke({'color':"red","width":4})
@@ -892,26 +891,6 @@
 					add.polyline('0,0 0,10 5,5').fill('black')
 					this.fill('#0f9')
 				})
-
-				//GKR
-				draw.circle(20).fill('black').move(1630, 1090)
-				.on('click', function(){
-					if (tsLine9.attr("stroke")=="black") {
-						tsLine9.stroke({'color':"red","width":4})
-						r3Line6.stroke({'color':"red","width":4})
-						r3Line4.stroke({'color':"red","width":4})
-					}
-					else{
-						tsLine9.stroke({'color':"black","width":2})
-						r3Line6.stroke({'color':"black","width":2})
-						r3Line4.stroke({'color':"black","width":2})
-					}
-				})
-				draw.text("GKR [90]").move(1630, 1070).font({fill:'blue', family: 'Arial'})
-				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
-					document.write(linksArray["[90]"] + "<br>" + referencesArray["[90]"] + "<br>" + pdfsArray["[90]"])})
-
-
 				//-------------------------------------------------------------------
 
 				//-----------------------Hashing subtree-----------------------------
@@ -982,6 +961,23 @@
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[25]"] + "<br>" + referencesArray["[25]"] + "<br>" + pdfsArray["[25]"])})
 
+				//GKR
+				draw.polygon('1630,1100 1640,1090 1650,1100, 1640,1110, 1630,1100').fill('black').move(1630, 1090)
+				.on('click', function(){
+					if (tsLine9.attr("stroke")=="black") {
+						tsLine9.stroke({'color':"red","width":4})
+						r3Line6.stroke({'color':"red","width":4})
+						rtreeToGKR.stroke({'color':"red","width":4})
+					}
+					else{
+						tsLine9.stroke({'color':"black","width":2})
+						r3Line6.stroke({'color':"black","width":2})
+						rtreeToGKR.stroke({'color':"black","width":2})
+					}
+				})
+				draw.text("GKR [90]").move(1630, 1070).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[90]"] + "<br>" + referencesArray["[90]"] + "<br>" + pdfsArray["[90]"])})
 
 				//Hashing
 				draw.circle(20).fill('blue').stroke({'color':'black','width':2}).move(440, 1150)
@@ -1178,7 +1174,7 @@
 					document.write(linksArray["[73]"] + "<br>" + referencesArray["[73]"] + "<br>" + pdfsArray["[73]"])})
 
 				//[116]-[161]
-				var r4Line11 = draw.polyline([60, 900, 200,1400, 420,1400]).stroke({ color: 'black', width: 2}).fill('none')
+				var rtreeToBdualtree = draw.polyline([60, 900, 200,1400, 440,1400, 1000,2150]).stroke({ color: 'black', width: 2}).fill('none')
 					.marker('end', 10, 10, function(add) {
 					add.polyline('0,0 0,10 5,5').fill('black')
 					this.fill('#0f9')
@@ -1385,12 +1381,10 @@
 					if (rtreeToANRtree.attr("stroke")=="black") {
 						rtreeToANRtree.stroke({'color':"red","width":4})
 						fnrtreeToANRtree.stroke({'color':"red","width":4})
-						MVBtreeToMV3Rtree.stroke({'color':"red","width":4})
 					}
 					else{
 						rtreeToANRtree.stroke({'color':"black","width":2})
 						fnrtreeToANRtree.stroke({'color':"black","width":2})
-						MVBtreeToMV3Rtree.stroke({'color':"black","width":2})
 					}
 				})
 				draw.text("ANR-tree [26]").move(1000, 1190).font({fill:'blue', family: 'Arial'})
@@ -1575,7 +1569,7 @@
 				})
 
 				//2TA
-				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1750, 1690)
+				draw.polygon('1750,1700 1760,1690 1770,1700, 1760,1710, 1750,1700').fill('black').move(1750, 1690)
 				.on('click', function(){(gridTo2TA.attr("stroke")=="black") ? gridTo2TA.stroke({'color':"red","width":4}) : gridTo2TA.stroke({'color':"black","width":2})})
 				draw.text("2TA [148]").move(1770, 1690).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
@@ -1659,20 +1653,611 @@
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[149]"] + "<br>" + referencesArray["[149]"] + "<br>" + pdfsArray["[149]"])})
 
+				var gridToAFIA = draw.polyline([80,1700, 100,1830, 1550,1830]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//AFIA
+				draw.polygon('1550,1830 1560,1820 1570,1830, 1560,1840, 1550,1830').fill('black')
+				.on('click', function(){(gridToAFIA.attr("stroke")=="black") ? gridToAFIA.stroke({'color':"red","width":4}) : gridToAFIA.stroke({'color':"black","width":2})})
+				draw.text("AFIA [127]").move(1570,1820).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[127]"] + "<br>" + referencesArray["[127]"] + "<br>" + pdfsArray["[127]"])})
+
+				var gridToRACtree = draw.polyline([80,1700, 100,1830, 1480,1830, 1550,1870]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//RAC-tree
+				draw.polygon('1550,1870 1560,1860 1570,1870, 1560,1880, 1550,1870').fill('black')
+				.on('click', function(){(gridToRACtree.attr("stroke")=="black") ? gridToRACtree.stroke({'color':"red","width":4}) : gridToRACtree.stroke({'color':"black","width":2})})
+				draw.text("RAC-tree [29]").move(1570,1860).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[29]"] + "<br>" + referencesArray["[29]"] + "<br>" + pdfsArray["[29]"])})
+
+				var gridToSWST = draw.polyline([80,1700, 100,1830, 600,1830, 1400, 2090]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
 				//--------------------------------------------------------------------
 
 				//-----------------------Quadtree subtree--------------------------------
+				//RAC-tree
+				draw.rect(20,20).fill('black').stroke({'color':'black','width':2}).move(60, 1990)
+				.on('click', function(){(gridToRACtree.attr("stroke")=="black") ? gridToRACtree.stroke({'color':"red","width":4}) : gridToRACtree.stroke({'color':"black","width":2})})
+				draw.text("Quadtree [46]").move(0,1970).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[46]"] + "<br>" + referencesArray["[46]"] + "<br>" + pdfsArray["[46]"])})
+
+				var quadtreeToSFCquadtree = draw.polyline([80,2000, 100,1900, 1350,1900]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//SFC-quadtree
+				draw.polyline([1350,1890, 1365,1900, 1350,1910, 1350,1890]).stroke({ color: 'black', width: 2}).fill('white')
+				.on('click', function(){(quadtreeToSFCquadtree.attr("stroke")=="black") ? quadtreeToSFCquadtree.stroke({'color':"red","width":4}) : quadtreeToSFCquadtree.stroke({'color':"black","width":2})})
+				draw.text("SFC-quadtree [31]").move(1270,1910).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[31]"] + "<br>" + referencesArray["[31]"] + "<br>" + pdfsArray["[31]"])})
+
+				var quadtreeToIFST = draw.polyline([80,2000, 100,1900, 1370,1900, 1635,1460]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//IFST
+				draw.polygon('1630,1450 1640,1440 1650,1450, 1640,1460, 1630,1450').fill('black')
+				.on('click', function(){
+					if (quadtreeToIFST.attr("stroke")=="black") {
+						quadtreeToIFST.stroke({'color':"red","width":4})
+						rtreeToIFST.stroke({'color':"red","width":4})
+					}
+					else{
+						quadtreeToIFST.stroke({'color':"black","width":2})
+						rtreeToIFST.stroke({'color':"black","width":2})
+					}
+				})
+				draw.text("IFST [90]").move(1650,1440).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[90]"] + "<br>" + referencesArray["[90]"] + "<br>" + pdfsArray["[90]"])})
+
+				var quadtreeToSTtree = draw.polyline([80,2000, 100,1950, 1750,1950]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//ST-tree
+				draw.polygon('1750,1950 1760,1940 1770,1950, 1760,1960, 1750,1950').fill('black')
+				.on('click', function(){(quadtreeToSTtree.attr("stroke")=="black") ? quadtreeToSTtree.stroke({'color':"red","width":4}) : quadtreeToSTtree.stroke({'color':"black","width":2})})
+				draw.text("ST-tree [79]").move(1770,1940).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[79]"] + "<br>" + referencesArray["[79]"] + "<br>" + pdfsArray["[79]"])})
+
+				var quadtreeToOverlappedQuadtree = draw.polyline([80,2000, 100,1970, 330,1970]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//Overlapped Quadtree
+				draw.circle(20).fill('black').move(330,1960)
+				.on('click', function(){(quadtreeToOverlappedQuadtree.attr("stroke")=="black") ? quadtreeToOverlappedQuadtree.stroke({'color':"red","width":4}) : quadtreeToOverlappedQuadtree.stroke({'color':"black","width":2})})
+				draw.text("Overlapped Quadtree [143]").move(350,1960).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[143]"] + "<br>" + referencesArray["[143]"] + "<br>" + pdfsArray["[143]"])})
+
+				var quadtreeToSTrajstore = draw.polyline([80,2000, 100,2000, 1250,2000]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//Trajstore
+				draw.circle(20).fill('black').move(1250,1990)
+				.on('click', function(){(quadtreeToOverlappedQuadtree.attr("stroke")=="black") ? quadtreeToOverlappedQuadtree.stroke({'color':"red","width":4}) : quadtreeToOverlappedQuadtree.stroke({'color':"black","width":2})})
+				draw.text("Trajstore [32]").move(1270,1990).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[32]"] + "<br>" + referencesArray["[32]"] + "<br>" + pdfsArray["[32]"])})
+
+				var quadtreeToFutureQuadtree = draw.polyline([80,2000, 100,2030, 330,2030]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//Future Quadtree
+				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(330,2020)
+				.on('click', function(){(quadtreeToFutureQuadtree.attr("stroke")=="black") ? quadtreeToFutureQuadtree.stroke({'color':"red","width":4}) : quadtreeToFutureQuadtree.stroke({'color':"black","width":2})})
+				draw.text("Future Quadtree [136]").move(250,2040).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[136]"] + "<br>" + referencesArray["[136]"] + "<br>" + pdfsArray["[136]"])})
+
+				var quadtreeToSTRIPES = draw.polyline([80,2000, 100,2030, 680,2030]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				var quadtreeToPHtree = draw.polyline([80,2000, 100,2070, 1550,2070]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//PH-tree
+				draw.circle(20).fill('black').move(1550,2060)
+				.on('click', function(){(quadtreeToPHtree.attr("stroke")=="black") ? quadtreeToPHtree.stroke({'color':"red","width":4}) : quadtreeToPHtree.stroke({'color':"black","width":2})})
+				draw.text("PH-tree [164]").move(1570,2060).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[164]"] + "<br>" + referencesArray["[164]"] + "<br>" + pdfsArray["[164]"])})
+
+				var quadtreeToGiki = draw.polyline([80,2000, 100,2070, 1470,2070, 1600,2100]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
 				//---------------------------------------------------------------------
 
 				//-----------------------B-tree subtree-------------------------------
+				draw.text("B-tree [12]").move(0,2460).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[12]"] + "<br>" + referencesArray["[12]"] + "<br>" + pdfsArray["[12]"])})
+
+				var btreeToSWST = draw.polyline([80,2480, 100,2100, 1400,2100]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//SWST
+				draw.circle(20).fill('green').stroke({'color':'black','width':2}).move(1400, 2090)
+				.on('click', function(){
+					if (btreeToSWST.attr("stroke")=="black") {
+						btreeToSWST.stroke({'color':"red","width":4})
+						gridToSWST.stroke({'color':"red","width":4})
+					}
+					else{
+						btreeToSWST.stroke({'color':"black","width":2})
+						gridToSWST.stroke({'color':"black","width":2})
+					}
+				})
+				draw.text("SWST [126]").move(1420,2090).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[126]"] + "<br>" + referencesArray["[126]"] + "<br>" + pdfsArray["[126]"])})
+
+				var btreeToGiki = draw.polyline([80,2480, 100,2130, 1400,2130, 1600,2100]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//Giki
+				draw.polygon('1600,2100 1610,2090 1620,2100, 1610,2110, 1600,2100').fill('black')
+				.on('click', function(){
+					if (btreeToGiki.attr("stroke")=="black") {
+						btreeToGiki.stroke({'color':"red","width":4})
+						quadtreeToGiki.stroke({'color':"red","width":4})
+					}
+					else{
+						btreeToGiki.stroke({'color':"black","width":2})
+						quadtreeToGiki.stroke({'color':"black","width":2})
+					}
+				})
+				draw.text("Giki [165]").move(1620,2090).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[165]"] + "<br>" + referencesArray["[165]"] + "<br>" + pdfsArray["[165]"])})
+
+				var btreeToDITIR = draw.polyline([80,2480, 100,2130, 1750,2130]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//DITIR
+				draw.circle(20).fill('black').stroke({'color':'red','width':4}).move(1750,2120)
+				.on('click', function(){(btreeToDITIR.attr("stroke")=="black") ? btreeToDITIR.stroke({'color':"red","width":4}) : btreeToDITIR.stroke({'color':"black","width":2})})
+				draw.text("DITIR [22]").move(1770,2120).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[22]"] + "<br>" + referencesArray["[22]"] + "<br>" + pdfsArray["[22]"])})
+
+				var btreeToMBindex = draw.polyline([80,2480, 100,2300, 580,2300]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				var btreeToBxtree = draw.polyline([80,2480, 100,2350, 700,2350]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//Bxtree
+				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(700,2340)
+				.on('click', function(){(btreeToBxtree.attr("stroke")=="black") ? btreeToBxtree.stroke({'color':"red","width":4}) : btreeToBxtree.stroke({'color':"black","width":2})})
+				draw.text("Bxtree [60]").move(650,2360).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[60]"] + "<br>" + referencesArray["[60]"] + "<br>" + pdfsArray["[60]"])})
+
+				var btreeToBdualtree = draw.polyline([80,2480, 100,2350, 720,2350, 1000,2170]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//Bdual-tree
+				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1000,2150)
+				.on('click', function(){
+					if (btreeToBdualtree.attr("stroke")=="black") {
+						btreeToBdualtree.stroke({'color':"red","width":4})
+						rtreeToBdualtree.stroke({'color':"red","width":4})
+					}
+					else{
+						btreeToBdualtree.stroke({'color':"black","width":2})
+						rtreeToBdualtree.stroke({'color':"black","width":2})
+					}
+				})
+				draw.text("Bdual-tree [161]").move(1020,2150).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[161]"] + "<br>" + referencesArray["[161]"] + "<br>" + pdfsArray["[161]"])})
+
+				var btreeToaBytree = draw.polyline([80,2480, 100,2350, 720,2350, 1000,2200]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//aBy-tree
+				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1000,2190)
+				.on('click', function(){(btreeToaBytree.attr("stroke")=="black") ? btreeToaBytree.stroke({'color':"red","width":4}) : btreeToaBytree.stroke({'color':"black","width":2})})
+				draw.text("aBy-tree [27]").move(1020,2190).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[27]"] + "<br>" + referencesArray["[27]"] + "<br>" + pdfsArray["[27]"])})
+
+				var btreeToBytree = draw.polyline([80,2480, 100,2350, 720,2350, 1000,2230]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//By-tree
+				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1000,2220)
+				.on('click', function(){(btreeToBytree.attr("stroke")=="black") ? btreeToBytree.stroke({'color':"red","width":4}) : btreeToBytree.stroke({'color':"black","width":2})})
+				draw.text("By-tree [27]").move(1020,2220).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[27]"] + "<br>" + referencesArray["[27]"] + "<br>" + pdfsArray["[27]"])})
+
+				var btreeToST2Btree = draw.polyline([80,2480, 100,2350, 720,2350, 1000,2260]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//ST2B-tree
+				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1000,2250)
+				.on('click', function(){(btreeToST2Btree.attr("stroke")=="black") ? btreeToST2Btree.stroke({'color':"red","width":4}) : btreeToST2Btree.stroke({'color':"black","width":2})})
+				draw.text("ST2B-tree [28]").move(1020,2250).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[28]"] + "<br>" + referencesArray["[28]"] + "<br>" + pdfsArray["[28]"])})
+
+				var btreeToBdhTree = draw.polyline([80,2480, 100,2350, 720,2350, 1000,2290]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//Bdh-tree
+				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1000,2280)
+				.on('click', function(){(btreeToBdhTree.attr("stroke")=="black") ? btreeToBdhTree.stroke({'color':"red","width":4}) : btreeToBdhTree.stroke({'color':"black","width":2})})
+				draw.text("Bdh-tree [120]").move(1020,2280).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[120]"] + "<br>" + referencesArray["[120]"] + "<br>" + pdfsArray["[120]"])})
+
+				var btreeToBBxindex = draw.polyline([80,2480, 100,2350, 720,2350, 800,2400]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//BBx-index
+				draw.rect(20,20).fill('yellow').stroke({'color':'black','width':2}).move(800,2390)
+				.on('click', function(){(btreeToBBxindex.attr("stroke")=="black") ? btreeToBBxindex.stroke({'color':"red","width":4}) : btreeToBBxindex.stroke({'color':"black","width":2})})
+				draw.text("BBx-index [75]").move(820,2390).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[75]"] + "<br>" + referencesArray["[75]"] + "<br>" + pdfsArray["[75]"])})
+
+				var btreeToPEBtree = draw.polyline([80,2480, 100,2350, 720,2350, 1350,2350]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//PEB-tree
+				draw.circle(20).fill('blue').stroke({'color':'black','width':2}).move(1350,2340)
+				.on('click', function(){(btreeToPEBtree.attr("stroke")=="black") ? btreeToPEBtree.stroke({'color':"red","width":4}) : btreeToPEBtree.stroke({'color':"black","width":2})})
+				draw.text("PEB-tree [76]").move(1370,2340).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[76]"] + "<br>" + referencesArray["[76]"] + "<br>" + pdfsArray["[76]"])})
+
+				var btreeToSTCBtree = draw.polyline([80,2480, 100,2430, 720,2430, 1200,2430]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//STCB-tree
+				draw.rect(20,20).fill('yellow').stroke({'color':'black','width':2}).move(1200,2420)
+				.on('click', function(){(btreeToSTCBtree.attr("stroke")=="black") ? btreeToSTCBtree.stroke({'color':"red","width":4}) : btreeToSTCBtree.stroke({'color':"black","width":2})})
+				draw.text("STCB-tree [78]").move(1220,2420).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[78]"] + "<br>" + referencesArray["[78]"] + "<br>" + pdfsArray["[78]"])})
+
+				var btreeToFMI = draw.polyline([80,2480, 100,2470, 720,2470, 1500,2470]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//FMI
+				draw.circle(20).fill('black').move(1500,2460)
+				.on('click', function(){(btreeToFMI.attr("stroke")=="black") ? btreeToFMI.stroke({'color':"red","width":4}) : btreeToFMI.stroke({'color':"black","width":2})})
+				draw.text("FMI [78]").move(1520,2460).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[78]"] + "<br>" + referencesArray["[78]"] + "<br>" + pdfsArray["[78]"])})
+
+				var btreeToCFMI = draw.polyline([80,2480, 100,2470, 720,2470, 1500,2470, 1500,2410]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//CFMI
+				draw.circle(20).fill('black').move(1490,2390)
+				.on('click', function(){(btreeToCFMI.attr("stroke")=="black") ? btreeToCFMI.stroke({'color':"red","width":4}) : btreeToCFMI.stroke({'color':"black","width":2})})
+				draw.text("CFMI [78]").move(1510,2390).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[78]"] + "<br>" + referencesArray["[78]"] + "<br>" + pdfsArray["[78]"])})
+
+				var btreeToMPBtree = draw.polyline([80,2480, 100,2500, 720,2500, 1500,2500, 1500,2500]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//MPB-tree
+				draw.circle(20).fill('blue').stroke({'color':'red','width':4}).move(1500,2490)
+				.on('click', function(){(btreeToMPBtree.attr("stroke")=="black") ? btreeToMPBtree.stroke({'color':"red","width":4}) : btreeToMPBtree.stroke({'color':"black","width":2})})
+				draw.text("MPB-tree [56]").move(1520,2490).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[56]"] + "<br>" + referencesArray["[56]"] + "<br>" + pdfsArray["[56]"])})
+
+				var btreeToK2tree = draw.polyline([80,2480, 100,2540, 720,2540, 1200,2540]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//K2-tree
+				draw.rect(20,20).fill('black').move(1200,2530)
+				.on('click', function(){(btreeToK2tree.attr("stroke")=="black") ? btreeToK2tree.stroke({'color':"red","width":4}) : btreeToK2tree.stroke({'color':"black","width":2})})
+				draw.text("K2-tree [19]").move(1140,2510).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[19]"] + "<br>" + referencesArray["[19]"] + "<br>" + pdfsArray["[19]"])})
+
+				var btreeToSMO = draw.polyline([80,2480, 100,2540, 720,2540, 1400,2540]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//SMO
+				draw.circle(20).fill('black').move(1400,2530)
+				.on('click', function(){(btreeToSMO.attr("stroke")=="black") ? btreeToSMO.stroke({'color':"red","width":4}) : btreeToSMO.stroke({'color':"black","width":2})})
+				draw.text("SMO [114]").move(1420,2530).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[114]"] + "<br>" + referencesArray["[114]"] + "<br>" + pdfsArray["[114]"])})
+
+				var btreeTopdt = draw.polyline([80,2480, 100,2580, 720,2580, 1250,2580]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//Predictive Distance Table
+				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1250,2570)
+				.on('click', function(){(btreeTopdt.attr("stroke")=="black") ? btreeTopdt.stroke({'color':"red","width":4}) : btreeTopdt.stroke({'color':"black","width":2})})
+				draw.text("Predictive Distance Table [62]").move(1080,2590).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[62]"] + "<br>" + referencesArray["[62]"] + "<br>" + pdfsArray["[62]"])})
+
+				var btreeToParinet = draw.polyline([80,2480, 100,2620, 720,2620, 1250,2620]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//Parinet
+				draw.circle(20).fill('black').move(1250,2610)
+				.on('click', function(){(btreeToParinet.attr("stroke")=="black") ? btreeToParinet.stroke({'color':"red","width":4}) : btreeToParinet.stroke({'color':"black","width":2})})
+				draw.text("Parinet [114]").move(1270,2620).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[114]"] + "<br>" + referencesArray["[114]"] + "<br>" + pdfsArray["[114]"])})
+
+				var btreeToTParinet = draw.polyline([80,2480, 100,2620, 1260,2620, 1350,2580]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//T-Parinet
+				draw.circle(20).fill('black').move(1350,2570)
+				.on('click', function(){(btreeToTParinet.attr("stroke")=="black") ? btreeToTParinet.stroke({'color':"red","width":4}) : btreeToTParinet.stroke({'color':"black","width":2})})
+				draw.text("T-Parinet [117]").move(1370,2570).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[117]"] + "<br>" + referencesArray["[117]"] + "<br>" + pdfsArray["[117]"])})
+
+				var btreeToTRIFL = draw.polyline([80,2480, 100,2660, 1600,2660]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//TRIFL
+				draw.circle(20).fill('black').move(1600,2650)
+				.on('click', function(){(btreeToTRIFL.attr("stroke")=="black") ? btreeToTRIFL.stroke({'color':"red","width":4}) : btreeToTRIFL.stroke({'color':"black","width":2})})
+				draw.text("TRIFL [137]").move(1620,2650).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[137]"] + "<br>" + referencesArray["[137]"] + "<br>" + pdfsArray["[137]"])})
 				//--------------------------------------------------------------------
 
 				//--------------------------kd-tree----------------------------------
+				draw.text("kd-tree [16]").move(0,2700).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[16]"] + "<br>" + referencesArray["[16]"] + "<br>" + pdfsArray["[16]"])})
+
+				var kdtreeToSTIG = draw.polyline([80,2700, 1700,2700]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//STIG
+				draw.circle(20).fill('black').stroke({'color':'red','width':4}).move(1700,2690)
+				.on('click', function(){(kdtreeToSTIG.attr("stroke")=="black") ? kdtreeToSTIG.stroke({'color':"red","width":4}) : kdtreeToSTIG.stroke({'color':"black","width":2})})
+				draw.text("STIG [39]").move(1720,2690).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[39]"] + "<br>" + referencesArray["[39]"] + "<br>" + pdfsArray["[39]"])})
 				//--------------------------------------------------------------------
 
+				//--------------------------Duality Subtree---------------------------
+				//Duality
+				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(375,2190)
+				draw.text("Duality [16]").move(285,2190).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[16]"] + "<br>" + referencesArray["[16]"] + "<br>" + pdfsArray["[16]"])})
 
+				var dualityToSTRIPES = draw.polyline([395,2200, 680,2030]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
 
+				//STRIPES
+				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(680,2020)
+				.on('click', function(){
+					if (dualityToSTRIPES.attr("stroke")=="black") {
+						dualityToSTRIPES.stroke({'color':"red","width":4})
+						quadtreeToSTRIPES.stroke({'color':"red","width":4})
+					}
+					else{
+						dualityToSTRIPES.stroke({'color':"black","width":2})
+						quadtreeToSTRIPES.stroke({'color':"black","width":2})
+					}
+				})
+				draw.text("STRIPES [103]").move(700,2020).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[103]"] + "<br>" + referencesArray["[103]"] + "<br>" + pdfsArray["[103]"])})
 
+				var dualityToKineticDuality = draw.polyline([395,2200, 450,2180]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//Kinetic+Duality
+				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(450,2170)
+				.on('click', function(){(dualityToKineticDuality.attr("stroke")=="black") ? dualityToKineticDuality.stroke({'color':"red","width":4}) : dualityToKineticDuality.stroke({'color':"black","width":2})})
+				draw.text("Kinetic+Duality [2]").move(470,2170).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[2]"] + "<br>" + referencesArray["[2]"] + "<br>" + pdfsArray["[2]"])})
+
+				var dualityToSVModel = draw.polyline([395,2200, 520,2200]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//SV-Model
+				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(520,2190)
+				.on('click', function(){(dualityToSVModel.attr("stroke")=="black") ? dualityToSVModel.stroke({'color':"red","width":4}) : dualityToSVModel.stroke({'color':"black","width":2})})
+				draw.text("SV-Model [30]").move(540,2190).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[30]"] + "<br>" + referencesArray["[30]"] + "<br>" + pdfsArray["[30]"])})
+
+				var dualityToMBindex = draw.polyline([395,2200, 580,2290]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//MB-index
+				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(580,2290)
+				.on('click', function(){
+					if (btreeToMBindex.attr("stroke")=="black") {
+						btreeToMBindex.stroke({'color':"red","width":4})
+						dualityToMBindex.stroke({'color':"red","width":4})
+					}
+					else{
+						btreeToMBindex.stroke({'color':"black","width":2})
+						dualityToMBindex.stroke({'color':"black","width":2})
+					}
+				})
+				draw.text("MB-index [40]").move(600,2290).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[40]"] + "<br>" + referencesArray["[40]"] + "<br>" + pdfsArray["[40]"])})
+
+				var dualityToPSI = draw.polyline([395,2200, 520,2280]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//PSI
+				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(520,2275)
+				.on('click', function(){(dualityToPSI.attr("stroke")=="black") ? dualityToPSI.stroke({'color':"red","width":4}) : dualityToPSI.stroke({'color':"black","width":2})})
+				draw.text("PSI [108]").move(440,2275).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[108]"] + "<br>" + referencesArray["[108]"] + "<br>" + pdfsArray["[108]"])})
+				//---------------------------------------------------------------------
+				//TOSS-it
+				draw.circle(20).fill('blue').stroke({'color':'red','width':4}).move(1550,2210)
+				draw.text("TOSS-it [4]").move(1470,2210).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[4]"] + "<br>" + referencesArray["[4]"] + "<br>" + pdfsArray["[4]"])})
+
+				var tossitToDTOSS = draw.polyline([1570,2220, 1700,2220]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//DTOSS
+				draw.circle(20).fill('blue').stroke({'color':'red','width':4}).move(1700,2210)
+				.on('click', function(){(tossitToDTOSS.attr("stroke")=="black") ? tossitToDTOSS.stroke({'color':"red","width":4}) : tossitToDTOSS.stroke({'color':"black","width":2})})
+				draw.text("DTOSS [5]").move(1720,2210).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[5]"] + "<br>" + referencesArray["[5]"] + "<br>" + pdfsArray["[5]"])})
+
+				//DSI
+				draw.circle(20).fill('blue').stroke({'color':'red','width':4}).move(1630,2160)
+				draw.text("DSI [162]").move(1650,2160).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[162]"] + "<br>" + referencesArray["[162]"] + "<br>" + pdfsArray["[162]"])})
+
+				//V-tree
+				draw.circle(20).fill('blue').stroke({'color':'black','width':2}).move(1750,2160)
+				draw.text("V-tree [121]").move(1770,2160).font({fill:'blue', family: 'Arial'})
+				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
+					document.write(linksArray["[121]"] + "<br>" + referencesArray["[121]"] + "<br>" + pdfsArray["[121]"])})
 
 			}).catch(function(err) {
 				console.error("graph could not be built", err);
