@@ -6,37 +6,6 @@
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/svg.js/2.7.1/svg.js"></script>
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
 		<style>
-			body{ font: Arial 12px; text-align: center;}
-			.popup {
-			  position: relative;
-			  display: inline-block;
-			  cursor: pointer;
-			  -webkit-user-select: none;
-			  -moz-user-select: none;
-			  -ms-user-select: none;
-			  user-select: none;
-			}
-
-			.popup .popuptext {
-			  visibility: hidden;
-			  width: 160px;
-			  background-color: #555;
-			  color: #fff;
-			  text-align: center;
-			  border-radius: 6px;
-			  padding: 8px 0;
-			  position: absolute;
-			  z-index: 1;
-			  bottom: 125%;
-			  left: 50%;
-			  margin-left: -80px;
-			}
-
-			/* Toggle this class - hide and show the popup */
-			.popup .show {
-			  visibility: visible;
-			}
-
 		</style>
 		<link rel="stylesheet" type="text/css" href="main.css">
 	</head>
@@ -73,7 +42,6 @@
 				const linksArray = results[1];
 				const referencesArray = results[2];
 
-				//console.log(referencesArray["[3]"]);
 				var draw = SVG('drawing')
 
 				//-------------pyramid subtree-------------
@@ -82,37 +50,40 @@
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[131]"] + "<br>" + referencesArray["[131]"] + "<br>" + pdfsArray["[131]"])})
 
-				var pyramidLine1 = draw.polyline([60,80,  200,10, 1700,10]).stroke({ color: 'black', width: 2}).fill('none')
+				var pyramidToGeoTrend = draw.polyline([60,80,  200,10, 1700,10]).stroke({ color: 'black', width: 2}).fill('none')
 					.marker('end', 10, 10, function(add) {
 					add.polyline('0,0 0,10 5,5').fill('black')
 					this.fill('#0f9')
 				})
-				var pyramidLine2 = draw.polyline([60,80,  180,40, 1500,40]).stroke({ color: 'black', width: 2}).fill('none')
-					.marker('end', 10, 10, function(add) {
-					add.polyline('0,0 0,10 5,5').fill('black')
-					this.fill('#0f9')
-				})
-
-				var pyramidLine3 = draw.line(60, 80, 1450, 70).stroke({color:'black', width:2})
+				var pyramidToMercury = draw.polyline([60,80,  180,40, 1500,40]).stroke({ color: 'black', width: 2}).fill('none')
 					.marker('end', 10, 10, function(add) {
 					add.polyline('0,0 0,10 5,5').fill('black')
 					this.fill('#0f9')
 				})
 
-				draw.polygon('1705,10 1715,0 1725,10 1715,20').fill('black')//GeoTrend
-				.on('click', function(){(pyramidLine1.attr("stroke")=="black") ? pyramidLine1.stroke({'color':"red","width":4}) : pyramidLine1.stroke({'color':"black","width":2})})
+				var pyramidToGAT = draw.line(60, 80, 1450, 70).stroke({color:'black', width:2})
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				//GeoTrend
+				draw.polygon('1705,10 1715,0 1725,10 1715,20').fill('black')
+				.on('click', function(){(pyramidToGeoTrend.attr("stroke")=="black") ? pyramidToGeoTrend.stroke({'color':"red","width":4}) : pyramidToGeoTrend.stroke({'color':"black","width":2})})
 				draw.text("GeoTrend [85]").move(1730, 5).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[85]"] + "<br>" + referencesArray["[85]"] + "<br>" + pdfsArray["[85]"])})
 
-				draw.polygon('1505,40 1515,30 1525,40 1515,50').fill('black')//Mercury
-				.on('click', function(){(pyramidLine2.attr("stroke")=="black") ? pyramidLine2.stroke({'color':"red","width":4}) : pyramidLine2.stroke({'color':"black","width":2})})
+				//Mercury
+				draw.polygon('1505,40 1515,30 1525,40 1515,50').fill('black')
+				.on('click', function(){(pyramidToMercury.attr("stroke")=="black") ? pyramidToMercury.stroke({'color':"red","width":4}) : pyramidToMercury.stroke({'color':"black","width":2})})
 				draw.text("Mercury [86]").move(1530, 30).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[86]"] + "<br>" + referencesArray["[86]"] + "<br>" + pdfsArray["[86]"])})
 
-				draw.polygon('1455,70 1465,60 1475,70 1465,80').fill('black')//GAT
-				.on('click', function(){(pyramidLine3.attr("stroke")=="black") ? pyramidLine3.stroke({'color':"red","width":4}) : pyramidLine3.stroke({'color':"black","width":2})})
+				//GAT
+				draw.polygon('1455,70 1465,60 1475,70 1465,80').fill('black')
+				.on('click', function(){(pyramidToGAT.attr("stroke")=="black") ? pyramidToGAT.stroke({'color':"red","width":4}) : pyramidToGAT.stroke({'color':"black","width":2})})
 				draw.text("GAT [166]").move(1480, 60).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[166]"] + "<br>" + referencesArray["[166]"] + "<br>" + pdfsArray["[166]"])})
@@ -215,87 +186,93 @@
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[51]"] + "<br>" + referencesArray["[51]"] + "<br>" + pdfsArray["[51]"])})
 
-				var rLine1 = draw.polyline([60,900,  190,240, 1650,240]).stroke({ color: 'black', width: 2}).fill('none')
+				var rtreeToTrajtree = draw.polyline([60,900,  190,240, 1650,240]).stroke({ color: 'black', width: 2}).fill('none')
 					.marker('end', 10, 10, function(add) {
 					add.polyline('0,0 0,10 5,5').fill('black')
 					this.fill('#0f9')
 				})
 
-				draw.circle(20).fill('black').move(1660, 230)//TrajTree
-				.on('click', function(){(rLine1.attr("stroke")=="black") ? rLine1.stroke({'color':"red","width":4}) : rLine1.stroke({'color':"black","width":2})})
+				//TrajTree
+				draw.circle(20).fill('black').move(1660, 230)
+				.on('click', function(){(rtreeToTrajtree.attr("stroke")=="black") ? rtreeToTrajtree.stroke({'color':"red","width":4}) : rtreeToTrajtree.stroke({'color':"black","width":2})})
 				draw.text("TrajTree [112]").move(1680, 230).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[112]"] + "<br>" + referencesArray["[112]"] + "<br>" + pdfsArray["[112]"])})
 
-				var rLine2 = draw.polyline([60,900,  190,260, 1650,260]).stroke({ color: 'black', width: 2}).fill('none')
+				var rtreeToPtree = draw.polyline([60,900,  190,260, 1650,260]).stroke({ color: 'black', width: 2}).fill('none')
 					.marker('end', 10, 10, function(add) {
 					add.polyline('0,0 0,10 5,5').fill('black')
 					this.fill('#0f9')
 				})
 
-				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1660, 250)//P-tree
-				.on('click', function(){(rLine2.attr("stroke")=="black") ? rLine2.stroke({'color':"red","width":4}) : rLine2.stroke({'color':"black","width":2})})
+				//P-tree
+				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1660, 250)
+				.on('click', function(){(rtreeToPtree.attr("stroke")=="black") ? rtreeToPtree.stroke({'color':"red","width":4}) : rtreeToPtree.stroke({'color':"black","width":2})})
 				draw.text("P-tree [57]").move(1680, 250).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[57]"] + "<br>" + referencesArray["[57]"] + "<br>" + pdfsArray["[57]"])})
 
 
-				var rLine3 = draw.polyline([60,900,  190,280, 1350,280]).stroke({ color: 'black', width: 2}).fill('none')
+				var rtreeToUTH = draw.polyline([60,900,  190,280, 1350,280]).stroke({ color: 'black', width: 2}).fill('none')
 					.marker('end', 10, 10, function(add) {
 					add.polyline('0,0 0,10 5,5').fill('black')
 					this.fill('#0f9')
 				})
 
-				draw.circle(20).fill('black').move(1360, 270)//UTH
-				.on('click', function(){(rLine3.attr("stroke")=="black") ? rLine3.stroke({'color':"red","width":4}) : rLine3.stroke({'color':"black","width":2})})
+				//UTH
+				draw.circle(20).fill('black').move(1360, 270)
+				.on('click', function(){(rtreeToUTH.attr("stroke")=="black") ? rtreeToUTH.stroke({'color':"red","width":4}) : rtreeToUTH.stroke({'color':"black","width":2})})
 				draw.text("UTH [167]").move(1380, 270).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[167]"] + "<br>" + referencesArray["[167]"] + "<br>" + pdfsArray["[167]"])})
 
-				var rLine4 = draw.polyline([60,900,  190,300, 1750,300]).stroke({ color: 'black', width: 2}).fill('none')
+				var rtreeToIRWItree = draw.polyline([60,900,  190,300, 1750,300]).stroke({ color: 'black', width: 2}).fill('none')
 					.marker('end', 10, 10, function(add) {
 					add.polyline('0,0 0,10 5,5').fill('black')
 					this.fill('#0f9')
 				})
 
-				draw.circle(20).fill('black').move(1760, 290)//IRWI-tree
-				.on('click', function(){(rLine4.attr("stroke")=="black") ? rLine4.stroke({'color':"red","width":4}) : rLine4.stroke({'color':"black","width":2})})
+				//IRWI-tree
+				draw.polygon('1755,300 1765,290 1775,300 1765,310').fill('black')
+				.on('click', function(){(rtreeToIRWItree.attr("stroke")=="black") ? rtreeToIRWItree.stroke({'color':"red","width":4}) : rtreeToIRWItree.stroke({'color':"black","width":2})})
 				draw.text("IRWI-tree [58]").move(1780, 290).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[58]"] + "<br>" + referencesArray["[58]"] + "<br>" + pdfsArray["[58]"])})
 
-				var rLine5 = draw.polyline([60,900,  190,320, 750,320]).stroke({ color: 'black', width: 2}).fill('none')
+				var rtreeToChebyshev = draw.polyline([60,900,  190,320, 750,320]).stroke({ color: 'black', width: 2}).fill('none')
 					.marker('end', 10, 10, function(add) {
 					add.polyline('0,0 0,10 5,5').fill('black')
 					this.fill('#0f9')
 				})
 
 				draw.circle(20).fill('black').move(760, 310)//Chebyshev Polynomial
-				.on('click', function(){(rLine5.attr("stroke")=="black") ? rLine5.stroke({'color':"red","width":4}) : rLine5.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToChebyshev.attr("stroke")=="black") ? rtreeToChebyshev.stroke({'color':"red","width":4}) : rtreeToChebyshev.stroke({'color':"black","width":2})})
 				draw.text("Chebyshev Polynomial [23]").move(780, 310).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[23]"] + "<br>" + referencesArray["[23]"] + "<br>" + pdfsArray["[23]"])})
 
-				var rLine6 = draw.polyline([60,900,  190,340, 1800,340]).stroke({ color: 'black', width: 2}).fill('none')
+				var rtreeToSTLs = draw.polyline([60,900,  190,340, 1800,340]).stroke({ color: 'black', width: 2}).fill('none')
 					.marker('end', 10, 10, function(add) {
 					add.polyline('0,0 0,10 5,5').fill('black')
 					this.fill('#0f9')
 				})
 
-				draw.circle(20).fill('black').move(1810, 330)//STLs
-				.on('click', function(){(rLine6.attr("stroke")=="black") ? rLine6.stroke({'color':"red","width":4}) : rLine6.stroke({'color':"black","width":2})})
-				draw.text("STLs [3]").move(1840, 330).font({fill:'blue', family: 'Arial'})
+				//STLs
+				draw.polygon('1805,340 1815,330 1825,340 1815,350').fill('black')
+				.on('click', function(){(rtreeToSTLs.attr("stroke")=="black") ? rtreeToSTLs.stroke({'color':"red","width":4}) : rtreeToSTLs.stroke({'color':"black","width":2})})
+				draw.text("STLs [3]").move(1830, 330).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[3]"] + "<br>" + referencesArray["[3]"] + "<br>" + pdfsArray["[3]"])})
 
-				var rLine8 = draw.polyline([60,900,  190,360, 650,360]).stroke({ color: 'black', width: 2}).fill('none')
+				var rtreeToIMORS = draw.polyline([60,900,  190,360, 650,360]).stroke({ color: 'black', width: 2}).fill('none')
 					.marker('end', 10, 10, function(add) {
 					add.polyline('0,0 0,10 5,5').fill('black')
 					this.fill('#0f9')
 				})
 
-				draw.circle(20).fill('blue').stroke({'color':'black','width':2}).move(660, 350)//IMORS
-				.on('click', function(){(rLine8.attr("stroke")=="black") ? rLine8.stroke({'color':"red","width":4}) : rLine8.stroke({'color':"black","width":2})})
+				//IMORS
+				draw.circle(20).fill('blue').stroke({'color':'black','width':2}).move(660, 350)
+				.on('click', function(){(rtreeToIMORS.attr("stroke")=="black") ? rtreeToIMORS.stroke({'color':"red","width":4}) : rtreeToIMORS.stroke({'color':"black","width":2})})
 				draw.text("IMORS [63]").move(680, 350).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[63]"] + "<br>" + referencesArray["[63]"] + "<br>" + pdfsArray["[63]"])})
@@ -2258,6 +2235,35 @@
 				draw.text("V-tree [121]").move(1770,2160).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[121]"] + "<br>" + referencesArray["[121]"] + "<br>" + pdfsArray["[121]"])})
+
+				//------------------------------------Legend-----------------------------------------
+				draw.circle(20).fill('black').stroke({'color':'black','width':2}).move(500,2800)
+				draw.text("Spatio-temporal index for the past").move(520,2800).font({fill:'black', family: 'Arial'})
+
+				draw.rect(20,20).fill('black').stroke({'color':'black','width':2}).move(500,2850)
+				draw.text("Spatial access method").move(520,2850).font({fill:'black', family: 'Arial'})
+
+				draw.polyline([500,2900, 520,2910, 500,2920, 500,2900]).stroke({ color: 'black', width: 2}).fill('white')
+				draw.text("Spatio-textual access method").move(520,2900).font({fill:'black', family: 'Arial'})
+
+				draw.circle(20).fill('blue').stroke({'color':'black','width':2}).move(800,2800)
+				draw.text("Spatio-temporal index for the current").move(820,2800).font({fill:'black', family: 'Arial'})
+
+				draw.circle(20).fill('green').stroke({'color':'black','width':2}).move(800,2850)
+				draw.text("Spatio-temporal index for the recent past").move(820,2850).font({fill:'black', family: 'Arial'})
+
+				draw.polygon('800,2910 810,2900 820,2910 810,2920').fill('black')
+				draw.text("Spatio-temporal textual index").move(820,2900).font({fill:'black', family: 'Arial'})
+
+				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1120,2800)
+				draw.text("Spatio-temporal index for the future").move(1140,2800).font({fill:'black', family: 'Arial'})
+
+				draw.rect(20,20).fill('yellow').stroke({'color':'black','width':2}).move(1120,2850)
+				draw.text("General Spatio-temporal index").move(1140,2850).font({fill:'black', family: 'Arial'})
+
+				draw.circle(20).fill('white').stroke({'color':'red','width':4}).move(1120,2900)
+				draw.text("Distributed or Parallel").move(1140,2900).font({fill:'black', family: 'Arial'})
+				//------------------------------------------------------------------------------------
 
 			}).catch(function(err) {
 				console.error("graph could not be built", err);
