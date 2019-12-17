@@ -2,7 +2,8 @@
 <meta charset="utf-8">
 <html>
 	<head>
-<svg id="drawing" width="2000" height="3500"></svg>
+<svg id="drawing" width="2000" height="3500">
+</svg>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/svg.js/2.7.1/svg.js"></script>
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
 		<style>
@@ -43,6 +44,43 @@
 				const referencesArray = results[2];
 
 				var draw = SVG('drawing')
+				draw.rect(630, 2720).fill('#d4c870').move(0, 0)
+				draw.rect(600, 2720).fill('#949fa8').move(630, 0)
+				draw.rect(630, 2720).fill('#a17b72').move(1230, 0)
+/* code for dotted lines
+				<g fill="none" stroke="black" stroke-width="4">
+					<path stroke-dasharray="2,2" d="M4 200 v215 0" />
+					<path stroke-dasharray="10,10" d="M5 40 l215 0" />
+					<path stroke-dasharray="20,10,5,5,5,10" d="M5 60 l215 0" />
+				</g>
+*/
+				draw.polyline([20,2750, 1900,2750]).stroke({ color: 'black', width: 2}).fill('none')
+				draw.text("70-89").move(50,2750).font({fill:'black', family: 'Arial'})
+				draw.text("90").move(160,2750).font({fill:'black', family: 'Arial'})
+				draw.text("91-94").move(220,2750).font({fill:'black', family: 'Arial'})
+				draw.text("95").move(290,2750).font({fill:'black', family: 'Arial'})
+				draw.text("96").move(330,2750).font({fill:'black', family: 'Arial'})
+				draw.text("97").move(370,2750).font({fill:'black', family: 'Arial'})
+				draw.text("98").move(400,2750).font({fill:'black', family: 'Arial'})
+				draw.text("99").move(450,2750).font({fill:'black', family: 'Arial'})
+				draw.text("00").move(500,2750).font({fill:'black', family: 'Arial'})
+				draw.text("01").move(550,2750).font({fill:'black', family: 'Arial'})
+				draw.text("02").move(600,2750).font({fill:'black', family: 'Arial'})
+				draw.text("03").move(640,2750).font({fill:'black', family: 'Arial'})
+				draw.text("04").move(740,2750).font({fill:'black', family: 'Arial'})
+				draw.text("05").move(860,2750).font({fill:'black', family: 'Arial'})
+				draw.text("06").move(950,2750).font({fill:'black', family: 'Arial'})
+				draw.text("07").move(1000,2750).font({fill:'black', family: 'Arial'})
+				draw.text("08").move(1170,2750).font({fill:'black', family: 'Arial'})
+				draw.text("09").move(1230,2750).font({fill:'black', family: 'Arial'})
+				draw.text("10").move(1290,2750).font({fill:'black', family: 'Arial'})
+				draw.text("11").move(1350,2750).font({fill:'black', family: 'Arial'})
+				draw.text("12").move(1400,2750).font({fill:'black', family: 'Arial'})
+				draw.text("13").move(1490,2750).font({fill:'black', family: 'Arial'})
+				draw.text("14").move(1550,2750).font({fill:'black', family: 'Arial'})
+				draw.text("15").move(1600,2750).font({fill:'black', family: 'Arial'})
+				draw.text("16").move(1690,2750).font({fill:'black', family: 'Arial'})
+				draw.text("17").move(1780,2750).font({fill:'black', family: 'Arial'})
 
 				//-------------pyramid subtree-------------
 				draw.rect(20, 20).fill('black').move(50, 70)
@@ -69,21 +107,21 @@
 
 				//GeoTrend
 				draw.polygon('1705,10 1715,0 1725,10 1715,20').fill('black')
-				.on('click', function(){(pyramidToGeoTrend.attr("stroke")=="black") ? pyramidToGeoTrend.stroke({'color':"red","width":4}) : pyramidToGeoTrend.stroke({'color':"black","width":2})})
+				.on('click', function(){(pyramidToGeoTrend.attr("stroke")=="black") ? pyramidToGeoTrend.stroke({'color':"red","width":6}) : pyramidToGeoTrend.stroke({'color':"black","width":2})})
 				draw.text("GeoTrend [85]").move(1730, 5).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[85]"] + "<br>" + referencesArray["[85]"] + "<br>" + pdfsArray["[85]"])})
 
 				//Mercury
 				draw.polygon('1505,40 1515,30 1525,40 1515,50').fill('black')
-				.on('click', function(){(pyramidToMercury.attr("stroke")=="black") ? pyramidToMercury.stroke({'color':"red","width":4}) : pyramidToMercury.stroke({'color':"black","width":2})})
+				.on('click', function(){(pyramidToMercury.attr("stroke")=="black") ? pyramidToMercury.stroke({'color':"red","width":6}) : pyramidToMercury.stroke({'color':"black","width":2})})
 				draw.text("Mercury [86]").move(1530, 30).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
-					document.write(linksArray["[86]"] + "<br>" + referencesArray["[86]"] + "<br>" + pdfsArray["[86]"])})
+					document.write("<a href=\"" + linksArray["[86]"] + "\">" + linksArray["[86]"] + "</a><br>" + referencesArray["[86]"] + "<br>" + pdfsArray["[86]"])})
 
 				//GAT
 				draw.polygon('1455,70 1465,60 1475,70 1465,80').fill('black')
-				.on('click', function(){(pyramidToGAT.attr("stroke")=="black") ? pyramidToGAT.stroke({'color':"red","width":4}) : pyramidToGAT.stroke({'color':"black","width":2})})
+				.on('click', function(){(pyramidToGAT.attr("stroke")=="black") ? pyramidToGAT.stroke({'color':"red","width":6}) : pyramidToGAT.stroke({'color':"black","width":2})})
 				draw.text("GAT [166]").move(1480, 60).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[166]"] + "<br>" + referencesArray["[166]"] + "<br>" + pdfsArray["[166]"])})
@@ -101,7 +139,7 @@
 
 				//MOVIES
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1210, 110)
-				.on('click', function(){(kdToMOVIES.attr("stroke")=="black") ? kdToMOVIES.stroke({'color':"red","width":4}) : kdToMOVIES.stroke({'color':"black","width":2})})
+				.on('click', function(){(kdToMOVIES.attr("stroke")=="black") ? kdToMOVIES.stroke({'color':"red","width":6}) : kdToMOVIES.stroke({'color':"black","width":2})})
 				draw.text("MOVIES [37]").move(1240, 110).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[37]"] + "<br>" + referencesArray["[37]"] + "<br>" + pdfsArray["[37]"])})
@@ -126,14 +164,14 @@
 
 				//Sim-Tree
 				draw.circle(20).fill('blue').stroke({'color':'black','width':2}).move(1510, 140)
-				.on('click', function(){(binTreeToSimtree.attr("stroke")=="black") ? binTreeToSimtree.stroke({'color':"red","width":4}) : binTreeToSimtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(binTreeToSimtree.attr("stroke")=="black") ? binTreeToSimtree.stroke({'color':"red","width":6}) : binTreeToSimtree.stroke({'color':"black","width":2})})
 				draw.text("Sim-tree [157]").move(1540, 140).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[157]"] + "<br>" + referencesArray["[157]"] + "<br>" + pdfsArray["[157]"])})
 
 				//Polar tree
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1210, 160)
-				.on('click', function(){(binTreeToPolartree.attr("stroke")=="black") ? binTreeToPolartree.stroke({'color':"red","width":4}) : binTreeToPolartree.stroke({'color':"black","width":2})})
+				.on('click', function(){(binTreeToPolartree.attr("stroke")=="black") ? binTreeToPolartree.stroke({'color':"red","width":6}) : binTreeToPolartree.stroke({'color':"black","width":2})})
 				draw.text("Polar tree [104]").move(1240, 160).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[104]"] + "<br>" + referencesArray["[104]"] + "<br>" + pdfsArray["[104]"])})
@@ -164,21 +202,21 @@
 
 				//QaDr
 				draw.circle(20).fill('black').stroke({'color':'red','width':4}).move(1720, 130)
-				.on('click', function(){(octToQaDr.attr("stroke")=="black") ? octToQaDr.stroke({'color':"red","width":4}) : octToQaDr.stroke({'color':"black","width":2})})
+				.on('click', function(){(octToQaDr.attr("stroke")=="black") ? octToQaDr.stroke({'color':"red","width":6}) : octToQaDr.stroke({'color':"black","width":2})})
 				draw.text("QaDr [53]").move(1740, 130).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[53]"] + "<br>" + referencesArray["[53]"] + "<br>" + pdfsArray["[53]"])})
 
 				//IOC-tree
 				draw.polygon('1655,190 1665,180 1675,190 1665,200').fill('black')
-				.on('click', function(){(octToIOCtree.attr("stroke")=="black") ? octToIOCtree.stroke({'color':"red","width":4}) : octToIOCtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(octToIOCtree.attr("stroke")=="black") ? octToIOCtree.stroke({'color':"red","width":6}) : octToIOCtree.stroke({'color':"black","width":2})})
 				draw.text("IOC-tree [54]").move(1680, 180).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[54]"] + "<br>" + referencesArray["[54]"] + "<br>" + pdfsArray["[54]"])})
 
 				//Elite
 				draw.circle(20).fill('black').stroke({'color':'red','width':4}).move(1720, 210)
-				.on('click', function(){(octToElite.attr("stroke")=="black") ? octToElite.stroke({'color':"red","width":4}) : octToElite.stroke({'color':"black","width":2})})
+				.on('click', function(){(octToElite.attr("stroke")=="black") ? octToElite.stroke({'color':"red","width":6}) : octToElite.stroke({'color':"black","width":2})})
 				draw.text("Elite [152]").move(1740, 210).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[152]"] + "<br>" + referencesArray["[152]"] + "<br>" + pdfsArray["[152]"])})
@@ -198,7 +236,7 @@
 
 				//TrajTree
 				draw.circle(20).fill('black').move(1660, 230)
-				.on('click', function(){(rtreeToTrajtree.attr("stroke")=="black") ? rtreeToTrajtree.stroke({'color':"red","width":4}) : rtreeToTrajtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToTrajtree.attr("stroke")=="black") ? rtreeToTrajtree.stroke({'color':"red","width":6}) : rtreeToTrajtree.stroke({'color':"black","width":2})})
 				draw.text("TrajTree [112]").move(1680, 230).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[112]"] + "<br>" + referencesArray["[112]"] + "<br>" + pdfsArray["[112]"])})
@@ -211,7 +249,7 @@
 
 				//P-tree
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1660, 250)
-				.on('click', function(){(rtreeToPtree.attr("stroke")=="black") ? rtreeToPtree.stroke({'color':"red","width":4}) : rtreeToPtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToPtree.attr("stroke")=="black") ? rtreeToPtree.stroke({'color':"red","width":6}) : rtreeToPtree.stroke({'color':"black","width":2})})
 				draw.text("P-tree [57]").move(1680, 250).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[57]"] + "<br>" + referencesArray["[57]"] + "<br>" + pdfsArray["[57]"])})
@@ -225,7 +263,7 @@
 
 				//UTH
 				draw.circle(20).fill('black').move(1360, 270)
-				.on('click', function(){(rtreeToUTH.attr("stroke")=="black") ? rtreeToUTH.stroke({'color':"red","width":4}) : rtreeToUTH.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToUTH.attr("stroke")=="black") ? rtreeToUTH.stroke({'color':"red","width":6}) : rtreeToUTH.stroke({'color':"black","width":2})})
 				draw.text("UTH [167]").move(1380, 270).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[167]"] + "<br>" + referencesArray["[167]"] + "<br>" + pdfsArray["[167]"])})
@@ -238,7 +276,7 @@
 
 				//IRWI-tree
 				draw.polygon('1755,300 1765,290 1775,300 1765,310').fill('black')
-				.on('click', function(){(rtreeToIRWItree.attr("stroke")=="black") ? rtreeToIRWItree.stroke({'color':"red","width":4}) : rtreeToIRWItree.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToIRWItree.attr("stroke")=="black") ? rtreeToIRWItree.stroke({'color':"red","width":6}) : rtreeToIRWItree.stroke({'color':"black","width":2})})
 				draw.text("IRWI-tree [58]").move(1780, 290).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[58]"] + "<br>" + referencesArray["[58]"] + "<br>" + pdfsArray["[58]"])})
@@ -250,7 +288,7 @@
 				})
 
 				draw.circle(20).fill('black').move(760, 310)//Chebyshev Polynomial
-				.on('click', function(){(rtreeToChebyshev.attr("stroke")=="black") ? rtreeToChebyshev.stroke({'color':"red","width":4}) : rtreeToChebyshev.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToChebyshev.attr("stroke")=="black") ? rtreeToChebyshev.stroke({'color':"red","width":6}) : rtreeToChebyshev.stroke({'color':"black","width":2})})
 				draw.text("Chebyshev Polynomial [23]").move(780, 310).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[23]"] + "<br>" + referencesArray["[23]"] + "<br>" + pdfsArray["[23]"])})
@@ -263,7 +301,7 @@
 
 				//STLs
 				draw.polygon('1805,340 1815,330 1825,340 1815,350').fill('black')
-				.on('click', function(){(rtreeToSTLs.attr("stroke")=="black") ? rtreeToSTLs.stroke({'color':"red","width":4}) : rtreeToSTLs.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToSTLs.attr("stroke")=="black") ? rtreeToSTLs.stroke({'color':"red","width":6}) : rtreeToSTLs.stroke({'color':"black","width":2})})
 				draw.text("STLs [3]").move(1830, 330).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[3]"] + "<br>" + referencesArray["[3]"] + "<br>" + pdfsArray["[3]"])})
@@ -276,7 +314,7 @@
 
 				//IMORS
 				draw.circle(20).fill('blue').stroke({'color':'black','width':2}).move(660, 350)
-				.on('click', function(){(rtreeToIMORS.attr("stroke")=="black") ? rtreeToIMORS.stroke({'color':"red","width":4}) : rtreeToIMORS.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToIMORS.attr("stroke")=="black") ? rtreeToIMORS.stroke({'color':"red","width":6}) : rtreeToIMORS.stroke({'color':"black","width":2})})
 				draw.text("IMORS [63]").move(680, 350).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[63]"] + "<br>" + referencesArray["[63]"] + "<br>" + pdfsArray["[63]"])})
@@ -289,14 +327,14 @@
 
 				//RTR-tree
 				draw.circle(20).fill('black').move(1210, 370)
-				.on('click', function(){(rtreeToRTRtree.attr("stroke")=="black") ? rtreeToRTRtree.stroke({'color':"red","width":4}) : rtreeToRTRtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToRTRtree.attr("stroke")=="black") ? rtreeToRTRtree.stroke({'color':"red","width":6}) : rtreeToRTRtree.stroke({'color':"black","width":2})})
 				draw.text("RTR-tree [61]").move(1240, 370).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[61]"] + "<br>" + referencesArray["[61]"] + "<br>" + pdfsArray["[61]"])})
 
 				//TP2R-tree
 				draw.circle(20).fill('black').move(1210, 350)
-				.on('click', function(){(rtreeToRTRtree.attr("stroke")=="black") ? rtreeToRTRtree.stroke({'color':"red","width":4}) : rtreeToRTRtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToRTRtree.attr("stroke")=="black") ? rtreeToRTRtree.stroke({'color':"red","width":6}) : rtreeToRTRtree.stroke({'color':"black","width":2})})
 				draw.text("TP2R-tree [61]").move(1240, 350).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[61]"] + "<br>" + referencesArray["[61]"] + "<br>" + pdfsArray["[61]"])})
@@ -315,7 +353,7 @@
 
 				//Composite-Indoor
 				draw.circle(20).fill('blue').stroke({'color':'black','width':2}).move(1460, 390)
-				.on('click', function(){(rtreeToCompositeIndoor.attr("stroke")=="black") ? rtreeToCompositeIndoor.stroke({'color':"red","width":4}) : rtreeToCompositeIndoor.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToCompositeIndoor.attr("stroke")=="black") ? rtreeToCompositeIndoor.stroke({'color':"red","width":6}) : rtreeToCompositeIndoor.stroke({'color':"black","width":2})})
 				draw.text("Composite-Indoor [151]").move(1480, 390).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[151]"] + "<br>" + referencesArray["[151]"] + "<br>" + pdfsArray["[151]"])})
@@ -332,12 +370,54 @@
 					this.fill('#0f9')
 				})
 
+				var rtreeToPolynomialGreedy = draw.polyline([60,900,  190,440, 550,440]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+					})
+
+				var rtreeToPAtree = draw.polyline([60,900,  190,440, 850,440]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				var rtreeToLURtree = draw.polyline([60,900,  190,520, 550,520]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				var rtreeToFURtree = draw.polyline([60,900,  190,520, 650,520]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				var rtreeToRUMtree = draw.polyline([60,900,  190,520, 950,520]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				var rtreeToTrailstree = draw.polyline([60,900,  190,520, 1550,520]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
+				var rtreeToRumplustree = draw.polyline([60,900,  190,520, 950,520, 1450, 480]).stroke({ color: 'black', width: 2}).fill('none')
+					.marker('end', 10, 10, function(add) {
+					add.polyline('0,0 0,10 5,5').fill('black')
+					this.fill('#0f9')
+				})
+
 				//Linear Greedy
 				draw.circle(20).fill('black').move(450, 430)
 				.on('click', function(){
 					if (rtreeToLinearGreedy.attr("stroke")=="black") {
-						rtreeToLinearGreedy.stroke({'color':"red","width":4})
-						PPRtreeToLinearGreedy.stroke({'color':"red","width":4})
+						rtreeToLinearGreedy.stroke({'color':"red","width":6})
+						PPRtreeToLinearGreedy.stroke({'color':"red","width":6})
 					}
 					else{
 						rtreeToLinearGreedy.stroke({'color':"black","width":2})
@@ -348,31 +428,19 @@
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[66]"] + "<br>" + referencesArray["[66]"] + "<br>" + pdfsArray["[66]"])})
 
-				var rtreeToPolynomialGreedy = draw.polyline([60,900,  190,440, 550,440]).stroke({ color: 'black', width: 2}).fill('none')
-					.marker('end', 10, 10, function(add) {
-					add.polyline('0,0 0,10 5,5').fill('black')
-					this.fill('#0f9')
-				})
-
 				//Polynomial Greedy
 				draw.circle(20).fill('black').move(550, 430)
-				.on('click', function(){(rtreeToPolynomialGreedy.attr("stroke")=="black") ? rtreeToPolynomialGreedy.stroke({'color':"red","width":4}) : rtreeToPolynomialGreedy.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToPolynomialGreedy.attr("stroke")=="black") ? rtreeToPolynomialGreedy.stroke({'color':"red","width":6}) : rtreeToPolynomialGreedy.stroke({'color':"black","width":2})})
 				draw.text("Polynomial Greedy [52]").move(500, 450).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[52]"] + "<br>" + referencesArray["[52]"] + "<br>" + pdfsArray["[52]"])})
-
-				var rtreeToPAtree = draw.polyline([60,900,  190,440, 850,440]).stroke({ color: 'black', width: 2}).fill('none')
-					.marker('end', 10, 10, function(add) {
-					add.polyline('0,0 0,10 5,5').fill('black')
-					this.fill('#0f9')
-				})
 
 				//PA-tree
 				draw.circle(20).fill('black').move(860, 430)
 				.on('click', function(){
 					if (rtreeToPAtree.attr("stroke")=="black") {
-						rtreeToPAtree.stroke({'color':"red","width":4})
-						PPRtreeToLinearGreedy.stroke({'color':"red","width":4})
+						rtreeToPAtree.stroke({'color':"red","width":6})
+						PPRtreeToLinearGreedy.stroke({'color':"red","width":6})
 					}
 					else{
 						rtreeToPAtree.stroke({'color':"black","width":2})
@@ -389,67 +457,37 @@
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[67]"] + "<br>" + referencesArray["[67]"] + "<br>" + pdfsArray["[67]"])})
 
-				var rtreeToLURtree = draw.polyline([60,900,  190,520, 550,520]).stroke({ color: 'black', width: 2}).fill('none')
-					.marker('end', 10, 10, function(add) {
-					add.polyline('0,0 0,10 5,5').fill('black')
-					this.fill('#0f9')
-				})
-
 				//LUR-tree
 				draw.circle(20).fill('blue').stroke({'color':'black','width':2}).move(550, 510)
-				.on('click', function(){(rtreeToLURtree.attr("stroke")=="black") ? rtreeToLURtree.stroke({'color':"red","width":4}) : rtreeToLURtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToLURtree.attr("stroke")=="black") ? rtreeToLURtree.stroke({'color':"red","width":6}) : rtreeToLURtree.stroke({'color':"black","width":2})})
 				draw.text("LUR-tree [68]").move(520, 530).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[68]"] + "<br>" + referencesArray["[68]"] + "<br>" + pdfsArray["[68]"])})
 
-				var rtreeToFURtree = draw.polyline([60,900,  190,520, 650,520]).stroke({ color: 'black', width: 2}).fill('none')
-					.marker('end', 10, 10, function(add) {
-					add.polyline('0,0 0,10 5,5').fill('black')
-					this.fill('#0f9')
-				})
-
 				//FUR-tree
 				draw.circle(20).fill('blue').stroke({'color':'black','width':2}).move(650, 510)
-				.on('click', function(){(rtreeToFURtree.attr("stroke")=="black") ? rtreeToFURtree.stroke({'color':"red","width":4}) : rtreeToFURtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToFURtree.attr("stroke")=="black") ? rtreeToFURtree.stroke({'color':"red","width":6}) : rtreeToFURtree.stroke({'color':"black","width":2})})
 				draw.text("FUR-tree [70]").move(650, 530).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[70]"] + "<br>" + referencesArray["[70]"] + "<br>" + pdfsArray["[70]"])})
 
-				var rtreeToRUMtree = draw.polyline([60,900,  190,520, 950,520]).stroke({ color: 'black', width: 2}).fill('none')
-					.marker('end', 10, 10, function(add) {
-					add.polyline('0,0 0,10 5,5').fill('black')
-					this.fill('#0f9')
-				})
-
 				//RUM-tree
 				draw.circle(20).fill('blue').stroke({'color':'black','width':2}).move(950, 510)
-				.on('click', function(){(rtreeToRUMtree.attr("stroke")=="black") ? rtreeToRUMtree.stroke({'color':"red","width":4}) : rtreeToRUMtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToRUMtree.attr("stroke")=="black") ? rtreeToRUMtree.stroke({'color':"red","width":6}) : rtreeToRUMtree.stroke({'color':"black","width":2})})
 				draw.text("RUM-tree [153]").move(950, 530).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[153]"] + "<br>" + referencesArray["[153]"] + "<br>" + pdfsArray["[153]"])})
 
-				var rtreeToTrailstree = draw.polyline([60,900,  190,520, 1550,520]).stroke({ color: 'black', width: 2}).fill('none')
-					.marker('end', 10, 10, function(add) {
-					add.polyline('0,0 0,10 5,5').fill('black')
-					this.fill('#0f9')
-				})
-
 				//Trails-tree
 				draw.circle(20).fill('green').stroke({'color':'black','width':2}).move(1550, 510)
-				.on('click', function(){(rtreeToTrailstree.attr("stroke")=="black") ? rtreeToTrailstree.stroke({'color':"red","width":4}) : rtreeToTrailstree.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToTrailstree.attr("stroke")=="black") ? rtreeToTrailstree.stroke({'color':"red","width":6}) : rtreeToTrailstree.stroke({'color':"black","width":2})})
 				draw.text("Trails-tree [88]").move(1550, 530).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[88]"] + "<br>" + referencesArray["[88]"] + "<br>" + pdfsArray["[88]"])})
 
-				var rtreeToRumplustree = draw.polyline([60,900,  190,520, 950,520, 1450, 480]).stroke({ color: 'black', width: 2}).fill('none')
-					.marker('end', 10, 10, function(add) {
-					add.polyline('0,0 0,10 5,5').fill('black')
-					this.fill('#0f9')
-				})
-
 				//RUM+-tree
 				draw.circle(20).fill('green').stroke({'color':'black','width':2}).move(1450, 470)
-				.on('click', function(){(rtreeToRumplustree.attr("stroke")=="black") ? rtreeToRumplustree.stroke({'color':"red","width":4}) : rtreeToRumplustree.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToRumplustree.attr("stroke")=="black") ? rtreeToRumplustree.stroke({'color':"red","width":6}) : rtreeToRumplustree.stroke({'color':"black","width":2})})
 				draw.text("RUM+-tree [171]").move(1470, 470).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[171]"] + "<br>" + referencesArray["[171]"] + "<br>" + pdfsArray["[171]"])})
@@ -471,8 +509,8 @@
 				draw.circle(20).fill('black').move(185, 700)
 				.on('click', function(){
 					if (rtreeToMRtree.attr("stroke")=="black") {
-						rtreeToMRtree.stroke({'color':"red","width":4})
-						OverlappedBtreeToMRtree.stroke({'color':"red","width":4})
+						rtreeToMRtree.stroke({'color':"red","width":6})
+						OverlappedBtreeToMRtree.stroke({'color':"red","width":6})
 					}
 					else{
 						rtreeToMRtree.stroke({'color':"black","width":2})
@@ -499,8 +537,8 @@
 				draw.circle(20).fill('black').move(330, 700)
 				.on('click', function(){
 					if (r2Line3.attr("stroke")=="black") {
-						r2Line3.stroke({'color':"red","width":4})
-						OverlappedBtreeToMRtree.stroke({'color':"red","width":4})
+						r2Line3.stroke({'color':"red","width":6})
+						OverlappedBtreeToMRtree.stroke({'color':"red","width":6})
 					}
 					else{
 						r2Line3.stroke({'color':"black","width":2})
@@ -525,7 +563,7 @@
 
 				//3D R-tree
 				draw.circle(20).fill('black').move(280, 890)
-				.on('click', function(){(rtreeTo3Drtree.attr("stroke")=="black") ? rtreeTo3Drtree.stroke({'color':"red","width":4}) : rtreeTo3Drtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeTo3Drtree.attr("stroke")=="black") ? rtreeTo3Drtree.stroke({'color':"red","width":6}) : rtreeTo3Drtree.stroke({'color':"black","width":2})})
 				draw.text("3D R-tree [138]").move(240, 910).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[138]"] + "<br>" + referencesArray["[138]"] + "<br>" + pdfsArray["[138]"])})
@@ -538,7 +576,7 @@
 
 				//2+3 R-tree
 				draw.circle(20).fill('blue').stroke({'color':'black','width':2}).move(380, 890)
-				.on('click', function(){(rtreeTo2plus3rtree.attr("stroke")=="black") ? rtreeTo2plus3rtree.stroke({'color':"red","width":4}) : rtreeTo2plus3rtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeTo2plus3rtree.attr("stroke")=="black") ? rtreeTo2plus3rtree.stroke({'color':"red","width":6}) : rtreeTo2plus3rtree.stroke({'color':"black","width":2})})
 				draw.text("2+3 R-tree [96]").move(380, 910).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[96]"] + "<br>" + referencesArray["[96]"] + "<br>" + pdfsArray["[96]"])})
@@ -578,8 +616,8 @@
 				draw.circle(20).fill('black').move(450, 790)
 				.on('click', function(){
 					if (rtreeToMV3Rtree.attr("stroke")=="black") {
-						rtreeToMV3Rtree.stroke({'color':"red","width":4})
-						MVBtreeToMV3Rtree.stroke({'color':"red","width":4})
+						rtreeToMV3Rtree.stroke({'color':"red","width":6})
+						MVBtreeToMV3Rtree.stroke({'color':"red","width":6})
 					}
 					else{
 						rtreeToMV3Rtree.stroke({'color':"black","width":2})
@@ -600,10 +638,10 @@
 				draw.circle(20).fill('black').move(450, 690)
 				.on('click', function(){
 					if (rtreeToHRplustree.attr("stroke")=="black") {
-						rtreeToHRplustree.stroke({'color':"red","width":4})
-						OverlappedBtreeToMRtree.stroke({'color':"red","width":4})
-						rtreeToHRplustree2.stroke({'color':"red","width":4})
-						MVBtreeToMV3Rtree.stroke({'color':"red","width":4})
+						rtreeToHRplustree.stroke({'color':"red","width":6})
+						OverlappedBtreeToMRtree.stroke({'color':"red","width":6})
+						rtreeToHRplustree2.stroke({'color':"red","width":6})
+						MVBtreeToMV3Rtree.stroke({'color':"red","width":6})
 					}
 					else{
 						rtreeToHRplustree.stroke({'color':"black","width":2})
@@ -624,7 +662,7 @@
 
 				//FNR-tree
 				draw.circle(20).fill('black').move(650, 820)
-				.on('click', function(){(rtreeToFNRtree.attr("stroke")=="black") ? rtreeToFNRtree.stroke({'color':"red","width":4}) : rtreeToFNRtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToFNRtree.attr("stroke")=="black") ? rtreeToFNRtree.stroke({'color':"red","width":6}) : rtreeToFNRtree.stroke({'color':"black","width":2})})
 				draw.text("FNR-tree [47]").move(650, 800).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[47]"] + "<br>" + referencesArray["[47]"] + "<br>" + pdfsArray["[47]"])})
@@ -637,7 +675,7 @@
 
 				//MON-tree
 				draw.circle(20).fill('black').move(850, 820)
-				.on('click', function(){(rtreeToMONtree.attr("stroke")=="black") ? rtreeToMONtree.stroke({'color':"red","width":4}) : rtreeToMONtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToMONtree.attr("stroke")=="black") ? rtreeToMONtree.stroke({'color':"red","width":6}) : rtreeToMONtree.stroke({'color':"black","width":2})})
 				draw.text("MON-tree [34]").move(790, 840).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[34]"] + "<br>" + referencesArray["[34]"] + "<br>" + pdfsArray["[34]"])})
@@ -650,7 +688,7 @@
 
 				//UTR-tree
 				draw.circle(20).fill('black').move(1120, 710)
-				.on('click', function(){(rtreeToUTRtree.attr("stroke")=="black") ? rtreeToUTRtree.stroke({'color':"red","width":4}) : rtreeToUTRtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToUTRtree.attr("stroke")=="black") ? rtreeToUTRtree.stroke({'color':"red","width":6}) : rtreeToUTRtree.stroke({'color':"black","width":2})})
 				draw.text("UTR-tree [36]").move(1120, 690).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[36]"] + "<br>" + referencesArray["[36]"] + "<br>" + pdfsArray["[36]"])})
@@ -663,7 +701,7 @@
 
 				//Gstree
 				draw.circle(20).fill('black').move(1120, 820)
-				.on('click', function(){(rtreeToGstree.attr("stroke")=="black") ? rtreeToGstree.stroke({'color':"red","width":4}) : rtreeToGstree.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToGstree.attr("stroke")=="black") ? rtreeToGstree.stroke({'color':"red","width":6}) : rtreeToGstree.stroke({'color':"black","width":2})})
 				draw.text("Gstree [69]").move(1120, 800).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[69]"] + "<br>" + referencesArray["[69]"] + "<br>" + pdfsArray["[69]"])})
@@ -676,7 +714,7 @@
 
 				//PPFI
 				draw.rect(20,20).fill('yellow').stroke({'color':'black','width':2}).move(1120, 920)
-				.on('click', function(){(rtreeToPPFI.attr("stroke")=="black") ? rtreeToPPFI.stroke({'color':"red","width":4}) : rtreeToPPFI.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToPPFI.attr("stroke")=="black") ? rtreeToPPFI.stroke({'color':"red","width":6}) : rtreeToPPFI.stroke({'color':"black","width":2})})
 				draw.text("PPFI [43]").move(1120, 900).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[43]"] + "<br>" + referencesArray["[43]"] + "<br>" + pdfsArray["[43]"])})
@@ -698,7 +736,7 @@
 
 				//R*-tree
 				draw.rect(20,20).fill('black').move(190, 980)
-				.on('click', function(){(rtreeToRstartree.attr("stroke")=="black") ? rtreeToRstartree.stroke({'color':"red","width":4}) : rtreeToRstartree.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToRstartree.attr("stroke")=="black") ? rtreeToRstartree.stroke({'color':"red","width":6}) : rtreeToRstartree.stroke({'color':"black","width":2})})
 				draw.text("R*-tree [14]").move(180, 1000).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[14]"] + "<br>" + referencesArray["[14]"] + "<br>" + pdfsArray["[14]"])})
@@ -711,7 +749,7 @@
 
 				//KR*-tree
 				draw.polyline([1020,980, 1035,990, 1020,1000, 1020,980]).stroke({ color: 'black', width: 2}).fill('white')
-				.on('click', function(){(rtreeToKRstartree.attr("stroke")=="black") ? rtreeToKRstartree.stroke({'color':"red","width":4}) : rtreeToKRstartree.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToKRstartree.attr("stroke")=="black") ? rtreeToKRstartree.stroke({'color':"red","width":6}) : rtreeToKRstartree.stroke({'color':"black","width":2})})
 				draw.text("KR*-tree [55]").move(1020, 960).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[55]"] + "<br>" + referencesArray["[55]"] + "<br>" + pdfsArray["[55]"])})
@@ -755,8 +793,8 @@
 				draw.circle(20).fill('black').move(200, 1200)
 				.on('click', function(){
 					if (tsbToRTtree.attr("stroke")=="black") {
-						tsbToRTtree.stroke({'color':"red","width":4})
-						rtreeToRTtree.stroke({'color':"red","width":4})
+						tsbToRTtree.stroke({'color':"red","width":6})
+						rtreeToRTtree.stroke({'color':"red","width":6})
 					}
 					else{
 						tsbToRTtree.stroke({'color':"black","width":2})
@@ -777,8 +815,8 @@
 				draw.circle(20).fill('black').move(420, 1200)
 				.on('click', function(){
 					if (tsbToSTRtree.attr("stroke")=="black") {
-						tsbToSTRtree.stroke({'color':"red","width":4})
-						rtreeToRTtree.stroke({'color':"red","width":4})
+						tsbToSTRtree.stroke({'color':"red","width":6})
+						rtreeToRTtree.stroke({'color':"red","width":6})
 					}
 					else{
 						tsbToSTRtree.stroke({'color':"black","width":2})
@@ -799,8 +837,8 @@
 				draw.circle(20).fill('black').move(420, 1080)
 				.on('click', function(){
 					if (tsbToTBtree.attr("stroke")=="black") {
-						tsbToTBtree.stroke({'color':"red","width":4})
-						rtreeToRTtree.stroke({'color':"red","width":4})
+						tsbToTBtree.stroke({'color':"red","width":6})
+						rtreeToRTtree.stroke({'color':"red","width":6})
 					}
 					else{
 						tsbToTBtree.stroke({'color':"black","width":2})
@@ -821,9 +859,9 @@
 				draw.circle(20).fill('blue').stroke({'color':'black','width':2}).move(550, 890)
 				.on('click', function(){
 					if (rtreeTo2dash3rtree.attr("stroke")=="black") {
-						rtreeTo2dash3rtree.stroke({'color':"red","width":4})
-						rtreeToRTtree.stroke({'color':"red","width":4})
-						tsbTo2dash3rtree.stroke({'color':"red","width":4})
+						rtreeTo2dash3rtree.stroke({'color':"red","width":6})
+						rtreeToRTtree.stroke({'color':"red","width":6})
+						tsbTo2dash3rtree.stroke({'color':"red","width":6})
 					}
 					else{
 						rtreeTo2dash3rtree.stroke({'color':"black","width":2})
@@ -855,8 +893,8 @@
 				draw.polygon('1750,1000 1760,990 1770,1000, 1760,1010, 1750,1000').fill('black').move(1750, 990)
 				.on('click', function(){
 					if (tsbToITBtree.attr("stroke")=="black") {
-						tsbToITBtree.stroke({'color':"red","width":4})
-						rtreeToRTtree.stroke({'color':"red","width":4})
+						tsbToITBtree.stroke({'color':"red","width":6})
+						rtreeToRTtree.stroke({'color':"red","width":6})
 
 					}
 					else{
@@ -923,10 +961,10 @@
 				draw.circle(20).fill('black').move(850, 1020)
 				.on('click', function(){
 					if (tsbToMTSBtree.attr("stroke")=="black") {
-						tsbToMTSBtree.stroke({'color':"red","width":4})
-						rtreeToRTtree.stroke({'color':"red","width":4})
-						tsbToMTSBtree2.stroke({'color':"red","width":4})
-						hashingToMTSBtree.stroke({'color':"red","width":4})
+						tsbToMTSBtree.stroke({'color':"red","width":6})
+						rtreeToRTtree.stroke({'color':"red","width":6})
+						tsbToMTSBtree2.stroke({'color':"red","width":6})
+						hashingToMTSBtree.stroke({'color':"red","width":6})
 					}
 
 					else{
@@ -941,9 +979,9 @@
 				draw.circle(20).fill('black').move(650, 1080)
 				.on('click', function(){
 					if (tsbToSETI.attr("stroke")=="black") {
-						rtreeToRTtree.stroke({'color':"red","width":4})
-						hashingToMTSBtree.stroke({'color':"red","width":4})
-						tsbToSETI.stroke({'color':"red","width":4})
+						rtreeToRTtree.stroke({'color':"red","width":6})
+						hashingToMTSBtree.stroke({'color':"red","width":6})
+						tsbToSETI.stroke({'color':"red","width":6})
 					}
 					else{
 						rtreeToRTtree.stroke({'color':"black","width":2})
@@ -959,9 +997,9 @@
 				draw.polygon('1630,1100 1640,1090 1650,1100, 1640,1110, 1630,1100').fill('black').move(1630, 1090)
 				.on('click', function(){
 					if (tsbToGKR.attr("stroke")=="black") {
-						tsbToGKR.stroke({'color':"red","width":4})
-						rtreeToRTtree.stroke({'color':"red","width":4})
-						rtreeToGKR.stroke({'color':"red","width":4})
+						tsbToGKR.stroke({'color':"red","width":6})
+						rtreeToRTtree.stroke({'color':"red","width":6})
+						rtreeToGKR.stroke({'color':"red","width":6})
 					}
 					else{
 						tsbToGKR.stroke({'color':"black","width":2})
@@ -981,7 +1019,7 @@
 
 				//SEB
 				draw.circle(20).fill('black').move(650, 1150)
-				.on('click', function(){(hashingToSEB.attr("stroke")=="black") ? hashingToSEB.stroke({'color':"red","width":4}) : hashingToSEB.stroke({'color':"black","width":2})})
+				.on('click', function(){(hashingToSEB.attr("stroke")=="black") ? hashingToSEB.stroke({'color':"red","width":6}) : hashingToSEB.stroke({'color':"black","width":2})})
 				draw.text("SEB [129]").move(620, 1170).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[129]"] + "<br>" + referencesArray["[129]"] + "<br>" + pdfsArray["[129]"])})
@@ -990,11 +1028,11 @@
 				draw.circle(20).fill('black').move(1100, 1130)
 				.on('click', function(){
 					if (hashingToCSEtree2.attr("stroke")=="black") {
-						rtreeToRTtree.stroke({'color':"red","width":4})
-						hashingToCSEtree2.stroke({'color':"red","width":4})
-						tsbToSETI.stroke({'color':"red","width":4})
-						hashingToMTSBtree.stroke({'color':"red","width":4})
-						hashingToCSEtree.stroke({'color':"red","width":4})
+						rtreeToRTtree.stroke({'color':"red","width":6})
+						hashingToCSEtree2.stroke({'color':"red","width":6})
+						tsbToSETI.stroke({'color':"red","width":6})
+						hashingToMTSBtree.stroke({'color':"red","width":6})
+						hashingToCSEtree.stroke({'color':"red","width":6})
 					}
 					else{
 						rtreeToRTtree.stroke({'color':"black","width":2})
@@ -1018,7 +1056,7 @@
 
 				//TPR-tree
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(420, 1390)
-				.on('click', function(){(rtreeToTPRtree.attr("stroke")=="black") ? rtreeToTPRtree.stroke({'color':"red","width":4}) : rtreeToTPRtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToTPRtree.attr("stroke")=="black") ? rtreeToTPRtree.stroke({'color':"red","width":6}) : rtreeToTPRtree.stroke({'color':"black","width":2})})
 				draw.text("TPR-tree [116]").move(330, 1410).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[116]"] + "<br>" + referencesArray["[116]"] + "<br>" + pdfsArray["[116]"])})
@@ -1031,7 +1069,7 @@
 
 				//PR-tree
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(420, 1330)
-				.on('click', function(){(rtreeToPRtree.attr("stroke")=="black") ? rtreeToPRtree.stroke({'color':"red","width":4}) : rtreeToPRtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToPRtree.attr("stroke")=="black") ? rtreeToPRtree.stroke({'color':"red","width":6}) : rtreeToPRtree.stroke({'color':"black","width":2})})
 				draw.text("PR-tree [21]").move(330, 1320).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[21]"] + "<br>" + referencesArray["[21]"] + "<br>" + pdfsArray["[21]"])})
@@ -1044,7 +1082,7 @@
 
 				//NSI
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(455, 1330)
-				.on('click', function(){(rtreeToNSI.attr("stroke")=="black") ? rtreeToNSI.stroke({'color':"red","width":4}) : rtreeToNSI.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToNSI.attr("stroke")=="black") ? rtreeToNSI.stroke({'color':"red","width":6}) : rtreeToNSI.stroke({'color':"black","width":2})})
 				draw.text("NSI [108]").move(455, 1310).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[108]"] + "<br>" + referencesArray["[108]"] + "<br>" + pdfsArray["[108]"])})
@@ -1057,7 +1095,7 @@
 
 				//VCI
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(490, 1340)
-				.on('click', function(){(rtreeToVCI.attr("stroke")=="black") ? rtreeToVCI.stroke({'color':"red","width":4}) : rtreeToVCI.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToVCI.attr("stroke")=="black") ? rtreeToVCI.stroke({'color':"red","width":6}) : rtreeToVCI.stroke({'color':"black","width":2})})
 				draw.text("VCI [109]").move(490, 1360).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[109]"] + "<br>" + referencesArray["[109]"] + "<br>" + pdfsArray["[109]"])})
@@ -1070,7 +1108,7 @@
 
 				//Rexp
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(490, 1460)
-				.on('click', function(){(rtreeToRexp.attr("stroke")=="black") ? rtreeToRexp.stroke({'color':"red","width":4}) : rtreeToRexp.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToRexp.attr("stroke")=="black") ? rtreeToRexp.stroke({'color':"red","width":6}) : rtreeToRexp.stroke({'color':"black","width":2})})
 				draw.text("Rexp [115]").move(510, 1460).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[115]"] + "<br>" + referencesArray["[115]"] + "<br>" + pdfsArray["[115]"])})
@@ -1083,7 +1121,7 @@
 
 				//TPR*-tree
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(550, 1535)
-				.on('click', function(){(rtreeToTPRstartree.attr("stroke")=="black") ? rtreeToTPRstartree.stroke({'color':"red","width":4}) : rtreeToTPRstartree.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToTPRstartree.attr("stroke")=="black") ? rtreeToTPRstartree.stroke({'color':"red","width":6}) : rtreeToTPRstartree.stroke({'color':"black","width":2})})
 				draw.text("TPR*-tree [135]").move(550, 1510).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[135]"] + "<br>" + referencesArray["[135]"] + "<br>" + pdfsArray["[135]"])})
@@ -1098,10 +1136,10 @@
 				draw.rect(20,20).fill('yellow').stroke({'color':'black','width':2}).move(830, 1500)
 				.on('click', function(){
 					if (tprToPCF.attr("stroke")=="black") {
-						tprToPCF.stroke({'color':"red","width":4})
-						rtreeToRTtree.stroke({'color':"red","width":4})
-						tsbToSETI.stroke({'color':"red","width":4})
-						hashingToPCFstar.stroke({'color':"red","width":4})
+						tprToPCF.stroke({'color':"red","width":6})
+						rtreeToRTtree.stroke({'color':"red","width":6})
+						tsbToSETI.stroke({'color':"red","width":6})
+						hashingToPCFstar.stroke({'color':"red","width":6})
 					}
 
 					else{
@@ -1123,7 +1161,7 @@
 
 				//STPR*
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1400, 1450)
-				.on('click', function(){(rtreeToSTPRstar.attr("stroke")=="black") ? rtreeToSTPRstar.stroke({'color':"red","width":4}) : rtreeToSTPRstar.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToSTPRstar.attr("stroke")=="black") ? rtreeToSTPRstar.stroke({'color':"red","width":6}) : rtreeToSTPRstar.stroke({'color':"black","width":2})})
 				draw.text("STPR* [97]").move(1420, 1450).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[97]"] + "<br>" + referencesArray["[97]"] + "<br>" + pdfsArray["[97]"])})
@@ -1136,7 +1174,7 @@
 
 				//HTPR*
 				draw.rect(20,20).fill('yellow').stroke({'color':'black','width':2}).move(1350, 1590)
-				.on('click', function(){(rtreeToHTPRstar.attr("stroke")=="black") ? rtreeToHTPRstar.stroke({'color':"red","width":4}) : rtreeToHTPRstar.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToHTPRstar.attr("stroke")=="black") ? rtreeToHTPRstar.stroke({'color':"red","width":6}) : rtreeToHTPRstar.stroke({'color':"black","width":2})})
 				draw.text("HTPR* [44]").move(1350, 1570).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[44]"] + "<br>" + referencesArray["[44]"] + "<br>" + pdfsArray["[44]"])})
@@ -1149,7 +1187,7 @@
 
 				//Multiple TPR-trees
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(550, 1575)
-				.on('click', function(){(rtreeToMultipleTPRtrees.attr("stroke")=="black") ? rtreeToMultipleTPRtrees.stroke({'color':"red","width":4}) : rtreeToMultipleTPRtrees.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToMultipleTPRtrees.attr("stroke")=="black") ? rtreeToMultipleTPRtrees.stroke({'color':"red","width":6}) : rtreeToMultipleTPRtrees.stroke({'color':"black","width":2})})
 				draw.text("Multiple TPR-trees [9]").move(570, 1580).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[9]"] + "<br>" + referencesArray["[9]"] + "<br>" + pdfsArray["[9]"])})
@@ -1162,7 +1200,7 @@
 
 				//TPRU
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(550, 1615)
-				.on('click', function(){(rtreeToTPRU.attr("stroke")=="black") ? rtreeToTPRU.stroke({'color':"red","width":4}) : rtreeToTPRU.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToTPRU.attr("stroke")=="black") ? rtreeToTPRU.stroke({'color':"red","width":6}) : rtreeToTPRU.stroke({'color':"black","width":2})})
 				draw.text("TPRU [73]").move(570, 1615).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[73]"] + "<br>" + referencesArray["[73]"] + "<br>" + pdfsArray["[73]"])})
@@ -1182,7 +1220,7 @@
 
 				//STAR
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(495, 1620)
-				.on('click', function(){(rtreeToTPRtree2.attr("stroke")=="black") ? rtreeToTPRtree2.stroke({'color':"red","width":4}) : rtreeToTPRtree2.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToTPRtree2.attr("stroke")=="black") ? rtreeToTPRtree2.stroke({'color':"red","width":6}) : rtreeToTPRtree2.stroke({'color':"black","width":2})})
 				draw.text("STAR [110]").move(410, 1620).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[110]"] + "<br>" + referencesArray["[110]"] + "<br>" + pdfsArray["[110]"])})
@@ -1195,7 +1233,7 @@
 
 				//MVTPR
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(680, 1210)
-				.on('click', function(){(rtreeToMVTPR.attr("stroke")=="black") ? rtreeToMVTPR.stroke({'color':"red","width":4}) : rtreeToMVTPR.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToMVTPR.attr("stroke")=="black") ? rtreeToMVTPR.stroke({'color':"red","width":6}) : rtreeToMVTPR.stroke({'color':"black","width":2})})
 				draw.text("MVTPR [158]").move(650, 1200).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[158]"] + "<br>" + referencesArray["[158]"] + "<br>" + pdfsArray["[158]"])})
@@ -1208,7 +1246,7 @@
 
 				//CRTPR
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(680, 1250)
-				.on('click', function(){(rtreeToCRTPR.attr("stroke")=="black") ? rtreeToCRTPR.stroke({'color':"red","width":4}) : rtreeToCRTPR.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToCRTPR.attr("stroke")=="black") ? rtreeToCRTPR.stroke({'color':"red","width":6}) : rtreeToCRTPR.stroke({'color':"black","width":2})})
 				draw.text("CRTPR [94]").move(700, 1250).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[94]"] + "<br>" + referencesArray["[94]"] + "<br>" + pdfsArray["[94]"])})
@@ -1221,7 +1259,7 @@
 
 				//VRTPR
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(680, 1290)
-				.on('click', function(){(rtreeToVRTPR.attr("stroke")=="black") ? rtreeToVRTPR.stroke({'color':"red","width":4}) : rtreeToVRTPR.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToVRTPR.attr("stroke")=="black") ? rtreeToVRTPR.stroke({'color':"red","width":6}) : rtreeToVRTPR.stroke({'color':"black","width":2})})
 				draw.text("VRTPR [93]").move(700, 1290).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[93]"] + "<br>" + referencesArray["[93]"] + "<br>" + pdfsArray["[93]"])})
@@ -1234,7 +1272,7 @@
 
 				//Horizon
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(680, 1330)
-				.on('click', function(){(rtreeToHorizon.attr("stroke")=="black") ? rtreeToHorizon.stroke({'color':"red","width":4}) : rtreeToHorizon.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToHorizon.attr("stroke")=="black") ? rtreeToHorizon.stroke({'color':"red","width":6}) : rtreeToHorizon.stroke({'color':"black","width":2})})
 				draw.text("Horizon [141]").move(700, 1330).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[141]"] + "<br>" + referencesArray["[141]"] + "<br>" + pdfsArray["[141]"])})
@@ -1247,7 +1285,7 @@
 
 				//TPKDB
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(680, 1430)
-				.on('click', function(){(rtreeToTPKDB.attr("stroke")=="black") ? rtreeToTPKDB.stroke({'color':"red","width":4}) : rtreeToTPKDB.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToTPKDB.attr("stroke")=="black") ? rtreeToTPKDB.stroke({'color':"red","width":6}) : rtreeToTPKDB.stroke({'color':"black","width":2})})
 				draw.text("TPKDB [18]").move(700, 1430).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[18]"] + "<br>" + referencesArray["[18]"] + "<br>" + pdfsArray["[18]"])})
@@ -1260,7 +1298,7 @@
 
 				//STP
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(680, 1470)
-				.on('click', function(){(rtreeToSTP.attr("stroke")=="black") ? rtreeToSTP.stroke({'color':"red","width":4}) : rtreeToSTP.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToSTP.attr("stroke")=="black") ? rtreeToSTP.stroke({'color':"red","width":6}) : rtreeToSTP.stroke({'color':"black","width":2})})
 				draw.text("STP [132]").move(700, 1470).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[132]"] + "<br>" + referencesArray["[132]"] + "<br>" + pdfsArray["[132]"])})
@@ -1273,7 +1311,7 @@
 
 				//STPR
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(830, 1430)
-				.on('click', function(){(rtreeToSTPR.attr("stroke")=="black") ? rtreeToSTPR.stroke({'color':"red","width":4}) : rtreeToSTPR.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToSTPR.attr("stroke")=="black") ? rtreeToSTPR.stroke({'color':"red","width":6}) : rtreeToSTPR.stroke({'color':"black","width":2})})
 				draw.text("STPR [10]").move(850, 1430).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[10]"] + "<br>" + referencesArray["[10]"] + "<br>" + pdfsArray["[10]"])})
@@ -1286,7 +1324,7 @@
 
 				//LGU
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(830, 1470)
-				.on('click', function(){(rtreeToLGU.attr("stroke")=="black") ? rtreeToLGU.stroke({'color':"red","width":4}) : rtreeToLGU.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToLGU.attr("stroke")=="black") ? rtreeToLGU.stroke({'color':"red","width":6}) : rtreeToLGU.stroke({'color':"black","width":2})})
 				draw.text("LGU [10]").move(850, 1470).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[10]"] + "<br>" + referencesArray["[10]"] + "<br>" + pdfsArray["[10]"])})
@@ -1299,7 +1337,7 @@
 
 				//NCO
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(895, 1210)
-				.on('click', function(){(rtreeToNCO.attr("stroke")=="black") ? rtreeToNCO.stroke({'color':"red","width":4}) : rtreeToNCO.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToNCO.attr("stroke")=="black") ? rtreeToNCO.stroke({'color':"red","width":6}) : rtreeToNCO.stroke({'color':"black","width":2})})
 				draw.text("NCO [170]").move(890, 1190).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[170]"] + "<br>" + referencesArray["[170]"] + "<br>" + pdfsArray["[170]"])})
@@ -1312,7 +1350,7 @@
 
 				//RP-tree
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(895, 1240)
-				.on('click', function(){(rtreeToRPtree.attr("stroke")=="black") ? rtreeToRPtree.stroke({'color':"red","width":4}) : rtreeToRPtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToRPtree.attr("stroke")=="black") ? rtreeToRPtree.stroke({'color':"red","width":6}) : rtreeToRPtree.stroke({'color':"black","width":2})})
 				draw.text("RP-tree [77]").move(920, 1240).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[77]"] + "<br>" + referencesArray["[77]"] + "<br>" + pdfsArray["[77]"])})
@@ -1327,10 +1365,10 @@
 				draw.rect(20,20).fill('yellow').stroke({'color':'black','width':2}).stroke({'color':'black','width':2}).move(895, 1280)
 				.on('click', function(){
 					if (rtreeToRPPF.attr("stroke")=="black") {
-						rtreeToRPPF.stroke({'color':"red","width":4})
-						rtreeToMV3Rtree.stroke({'color':"red","width":4})
-						MVBtreeToMV3Rtree.stroke({'color':"red","width":4})
-						MV3RtreeToRPPF.stroke({'color':"red","width":4})
+						rtreeToRPPF.stroke({'color':"red","width":6})
+						rtreeToMV3Rtree.stroke({'color':"red","width":6})
+						MVBtreeToMV3Rtree.stroke({'color':"red","width":6})
+						MV3RtreeToRPPF.stroke({'color':"red","width":6})
 					}
 					else{
 						rtreeToRPPF.stroke({'color':"black","width":2})
@@ -1351,7 +1389,7 @@
 
 				//VTPR
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(895, 1320)
-				.on('click', function(){(rtreeToVTPR.attr("stroke")=="black") ? rtreeToVTPR.stroke({'color':"red","width":4}) : rtreeToVTPR.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToVTPR.attr("stroke")=="black") ? rtreeToVTPR.stroke({'color':"red","width":6}) : rtreeToVTPR.stroke({'color':"black","width":2})})
 				draw.text("VTPR [72]").move(920, 1320).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[72]"] + "<br>" + referencesArray["[72]"] + "<br>" + pdfsArray["[72]"])})
@@ -1366,8 +1404,8 @@
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1000, 1210)
 				.on('click', function(){
 					if (rtreeToANRtree.attr("stroke")=="black") {
-						rtreeToANRtree.stroke({'color':"red","width":4})
-						fnrtreeToANRtree.stroke({'color':"red","width":4})
+						rtreeToANRtree.stroke({'color':"red","width":6})
+						fnrtreeToANRtree.stroke({'color':"red","width":6})
 					}
 					else{
 						rtreeToANRtree.stroke({'color':"black","width":2})
@@ -1386,7 +1424,7 @@
 
 				//R-TPR+
 				draw.rect(20,20).fill('yellow').stroke({'color':'black','width':2}).move(1000, 1420)
-				.on('click', function(){(rtreeToRTPRplus.attr("stroke")=="black") ? rtreeToRTPRplus.stroke({'color':"red","width":4}) : rtreeToRTPRplus.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToRTPRplus.attr("stroke")=="black") ? rtreeToRTPRplus.stroke({'color':"red","width":6}) : rtreeToRTPRplus.stroke({'color':"black","width":2})})
 				draw.text("R-TPR+ [45]").move(1020, 1420).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[45]"] + "<br>" + referencesArray["[45]"] + "<br>" + pdfsArray["[45]"])})
@@ -1399,7 +1437,7 @@
 
 				//TPROM
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1000, 1450)
-				.on('click', function(){(rtreeToTPROM.attr("stroke")=="black") ? rtreeToTPROM.stroke({'color':"red","width":4}) : rtreeToTPROM.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToTPROM.attr("stroke")=="black") ? rtreeToTPROM.stroke({'color':"red","width":6}) : rtreeToTPROM.stroke({'color':"black","width":2})})
 				draw.text("TPROM [35]").move(1020, 1450).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[35]"] + "<br>" + referencesArray["[35]"] + "<br>" + pdfsArray["[35]"])})
@@ -1412,7 +1450,7 @@
 
 				//SSTP
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1000, 1490)
-				.on('click', function(){(rtreeToSSTP.attr("stroke")=="black") ? rtreeToSSTP.stroke({'color':"red","width":4}) : rtreeToSSTP.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToSSTP.attr("stroke")=="black") ? rtreeToSSTP.stroke({'color':"red","width":6}) : rtreeToSSTP.stroke({'color':"black","width":2})})
 				draw.text("SSTP [11]").move(1020, 1490).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[11]"] + "<br>" + referencesArray["[11]"] + "<br>" + pdfsArray["[11]"])})
@@ -1425,7 +1463,7 @@
 
 				//TPRuv
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1400, 1290)
-				.on('click', function(){(rtreeToTPRuv.attr("stroke")=="black") ? rtreeToTPRuv.stroke({'color':"red","width":4}) : rtreeToTPRuv.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToTPRuv.attr("stroke")=="black") ? rtreeToTPRuv.stroke({'color':"red","width":6}) : rtreeToTPRuv.stroke({'color':"black","width":2})})
 				draw.text("TPRuv [42]").move(1420, 1290).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[42]"] + "<br>" + referencesArray["[42]"] + "<br>" + pdfsArray["[42]"])})
@@ -1438,7 +1476,7 @@
 
 				//OST
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1350, 1340)
-				.on('click', function(){(rtreeToOST.attr("stroke")=="black") ? rtreeToOST.stroke({'color':"red","width":4}) : rtreeToOST.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToOST.attr("stroke")=="black") ? rtreeToOST.stroke({'color':"red","width":6}) : rtreeToOST.stroke({'color':"black","width":2})})
 				draw.text("OST [139]").move(1370, 1340).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[139]"] + "<br>" + referencesArray["[139]"] + "<br>" + pdfsArray["[139]"])})
@@ -1451,7 +1489,7 @@
 
 				//GGTPR
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1350, 1370)
-				.on('click', function(){(rtreeToGGTPR.attr("stroke")=="black") ? rtreeToGGTPR.stroke({'color':"red","width":4}) : rtreeToGGTPR.stroke({'color':"black","width":2})})
+				.on('click', function(){(rtreeToGGTPR.attr("stroke")=="black") ? rtreeToGGTPR.stroke({'color':"red","width":6}) : rtreeToGGTPR.stroke({'color':"black","width":2})})
 				draw.text("GGTPR [71]").move(1370, 1370).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[71]"] + "<br>" + referencesArray["[71]"] + "<br>" + pdfsArray["[71]"])})
@@ -1472,7 +1510,7 @@
 
 				//DVA
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1390, 1490)
-				.on('click', function(){(vpToDVA.attr("stroke")=="black") ? vpToDVA.stroke({'color':"red","width":4}) : vpToDVA.stroke({'color':"black","width":2})})
+				.on('click', function(){(vpToDVA.attr("stroke")=="black") ? vpToDVA.stroke({'color':"red","width":6}) : vpToDVA.stroke({'color':"black","width":2})})
 				draw.text("DVA [98]").move(1320, 1500).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[98]"] + "<br>" + referencesArray["[98]"] + "<br>" + pdfsArray["[98]"])})
@@ -1485,7 +1523,7 @@
 
 				//Speed Partitioning
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1630, 1490)
-				.on('click', function(){(vpTosp.attr("stroke")=="black") ? vpTosp.stroke({'color':"red","width":4}) : vpTosp.stroke({'color':"black","width":2})})
+				.on('click', function(){(vpTosp.attr("stroke")=="black") ? vpTosp.stroke({'color':"red","width":6}) : vpTosp.stroke({'color':"black","width":2})})
 				draw.text("Speed Partitioning [156]").move(1630, 1470).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[156]"] + "<br>" + referencesArray["[156]"] + "<br>" + pdfsArray["[156]"])})
@@ -1515,8 +1553,8 @@
 				draw.circle(20).fill('black').stroke({'color':'black','width':2}).move(1500, 1370)
 				.on('click', function(){
 					if (gridToUTGRID.attr("stroke")=="black") {
-						gridToUTGRID.stroke({'color':"red","width":4})
-						rtreeToUTGRID.stroke({'color':"red","width":4})
+						gridToUTGRID.stroke({'color':"red","width":6})
+						rtreeToUTGRID.stroke({'color':"red","width":6})
 					}
 					else{
 						gridToUTGRID.stroke({'color':"black","width":2})
@@ -1537,8 +1575,8 @@
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1700, 1640)
 				.on('click', function(){
 					if (gridToDgrid.attr("stroke")=="black") {
-						gridToDgrid.stroke({'color':"red","width":4})
-						vpToDGrid.stroke({'color':"red","width":4})
+						gridToDgrid.stroke({'color':"red","width":6})
+						vpToDGrid.stroke({'color':"red","width":6})
 					}
 					else{
 						gridToDgrid.stroke({'color':"black","width":2})
@@ -1557,7 +1595,7 @@
 
 				//2TA
 				draw.polygon('1750,1700 1760,1690 1770,1700, 1760,1710, 1750,1700').fill('black').move(1750, 1690)
-				.on('click', function(){(gridTo2TA.attr("stroke")=="black") ? gridTo2TA.stroke({'color':"red","width":4}) : gridTo2TA.stroke({'color':"black","width":2})})
+				.on('click', function(){(gridTo2TA.attr("stroke")=="black") ? gridTo2TA.stroke({'color':"red","width":6}) : gridTo2TA.stroke({'color':"black","width":2})})
 				draw.text("2TA [148]").move(1770, 1690).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[148]"] + "<br>" + referencesArray["[148]"] + "<br>" + pdfsArray["[148]"])})
@@ -1570,7 +1608,7 @@
 
 				//PASTIS
 				draw.rect(20,20).fill('yellow').stroke({'color':'black','width':2}).move(1550, 1660)
-				.on('click', function(){(gridToPASTIS.attr("stroke")=="black") ? gridToPASTIS.stroke({'color':"red","width":4}) : gridToPASTIS.stroke({'color':"black","width":2})})
+				.on('click', function(){(gridToPASTIS.attr("stroke")=="black") ? gridToPASTIS.stroke({'color':"red","width":6}) : gridToPASTIS.stroke({'color':"black","width":2})})
 				draw.text("PASTIS [113]").move(1570, 1660).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[113]"] + "<br>" + referencesArray["[113]"] + "<br>" + pdfsArray["[113]"])})
@@ -1583,7 +1621,7 @@
 
 				//TwinGrid
 				draw.circle(20).fill('blue').stroke({'color':'red','width':4}).move(1350, 1690)
-				.on('click', function(){(gridToTwinGrid.attr("stroke")=="black") ? gridToTwinGrid.stroke({'color':"red","width":4}) : gridToTwinGrid.stroke({'color':"black","width":2})})
+				.on('click', function(){(gridToTwinGrid.attr("stroke")=="black") ? gridToTwinGrid.stroke({'color':"red","width":6}) : gridToTwinGrid.stroke({'color':"black","width":2})})
 				draw.text("TwinGrid [122]").move(1270, 1710).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[122]"] + "<br>" + referencesArray["[122]"] + "<br>" + pdfsArray["[122]"])})
@@ -1596,7 +1634,7 @@
 
 				//Pgrid
 				draw.circle(20).fill('blue').stroke({'color':'red','width':4}).move(1400, 1690)
-				.on('click', function(){(gridToPgrid.attr("stroke")=="black") ? gridToPgrid.stroke({'color':"red","width":4}) : gridToPgrid.stroke({'color':"black","width":2})})
+				.on('click', function(){(gridToPgrid.attr("stroke")=="black") ? gridToPgrid.stroke({'color':"red","width":6}) : gridToPgrid.stroke({'color':"black","width":2})})
 				draw.text("Pgrid [124]").move(1420, 1690).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[124]"] + "<br>" + referencesArray["[124]"] + "<br>" + pdfsArray["[124]"])})
@@ -1609,7 +1647,7 @@
 
 				//Concurrently Updatable Index
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1550, 1730)
-				.on('click', function(){(gridToCUI.attr("stroke")=="black") ? gridToCUI.stroke({'color':"red","width":4}) : gridToCUI.stroke({'color':"black","width":2})})
+				.on('click', function(){(gridToCUI.attr("stroke")=="black") ? gridToCUI.stroke({'color':"red","width":6}) : gridToCUI.stroke({'color':"black","width":2})})
 				draw.text("Concurrently Updatable Index [118]").move(1570, 1730).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[118]"] + "<br>" + referencesArray["[118]"] + "<br>" + pdfsArray["[118]"])})
@@ -1622,7 +1660,7 @@
 
 				//LU-Grid
 				draw.circle(20).fill('blue').stroke({'color':'black','width':2}).move(900, 1770)
-				.on('click', function(){(gridToLUgrid.attr("stroke")=="black") ? gridToLUgrid.stroke({'color':"red","width":4}) : gridToLUgrid.stroke({'color':"black","width":2})})
+				.on('click', function(){(gridToLUgrid.attr("stroke")=="black") ? gridToLUgrid.stroke({'color':"red","width":6}) : gridToLUgrid.stroke({'color':"black","width":2})})
 				draw.text("LU-Grid [154]").move(920, 1770).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[154]"] + "<br>" + referencesArray["[154]"] + "<br>" + pdfsArray["[154]"])})
@@ -1635,7 +1673,7 @@
 
 				//AP*-tree
 				draw.polygon('1630,1810 1640,1800 1650,1810, 1640,1820, 1630,1810').fill('black')
-				.on('click', function(){(gridToAPtree.attr("stroke")=="black") ? gridToAPtree.stroke({'color':"red","width":4}) : gridToAPtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(gridToAPtree.attr("stroke")=="black") ? gridToAPtree.stroke({'color':"red","width":6}) : gridToAPtree.stroke({'color':"black","width":2})})
 				draw.text("AP*-tree [149]").move(1650, 1800).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[149]"] + "<br>" + referencesArray["[149]"] + "<br>" + pdfsArray["[149]"])})
@@ -1648,7 +1686,7 @@
 
 				//AFIA
 				draw.polygon('1550,1830 1560,1820 1570,1830, 1560,1840, 1550,1830').fill('black')
-				.on('click', function(){(gridToAFIA.attr("stroke")=="black") ? gridToAFIA.stroke({'color':"red","width":4}) : gridToAFIA.stroke({'color':"black","width":2})})
+				.on('click', function(){(gridToAFIA.attr("stroke")=="black") ? gridToAFIA.stroke({'color':"red","width":6}) : gridToAFIA.stroke({'color':"black","width":2})})
 				draw.text("AFIA [127]").move(1570,1820).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[127]"] + "<br>" + referencesArray["[127]"] + "<br>" + pdfsArray["[127]"])})
@@ -1661,7 +1699,7 @@
 
 				//RAC-tree
 				draw.polygon('1550,1870 1560,1860 1570,1870, 1560,1880, 1550,1870').fill('black')
-				.on('click', function(){(gridToRACtree.attr("stroke")=="black") ? gridToRACtree.stroke({'color':"red","width":4}) : gridToRACtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(gridToRACtree.attr("stroke")=="black") ? gridToRACtree.stroke({'color':"red","width":6}) : gridToRACtree.stroke({'color':"black","width":2})})
 				draw.text("RAC-tree [29]").move(1570,1860).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[29]"] + "<br>" + referencesArray["[29]"] + "<br>" + pdfsArray["[29]"])})
@@ -1676,7 +1714,7 @@
 				//-----------------------Quadtree subtree--------------------------------
 				//RAC-tree
 				draw.rect(20,20).fill('black').stroke({'color':'black','width':2}).move(60, 1990)
-				.on('click', function(){(gridToRACtree.attr("stroke")=="black") ? gridToRACtree.stroke({'color':"red","width":4}) : gridToRACtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(gridToRACtree.attr("stroke")=="black") ? gridToRACtree.stroke({'color':"red","width":6}) : gridToRACtree.stroke({'color':"black","width":2})})
 				draw.text("Quadtree [46]").move(0,1970).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[46]"] + "<br>" + referencesArray["[46]"] + "<br>" + pdfsArray["[46]"])})
@@ -1689,7 +1727,7 @@
 
 				//SFC-quadtree
 				draw.polyline([1350,1890, 1365,1900, 1350,1910, 1350,1890]).stroke({ color: 'black', width: 2}).fill('white')
-				.on('click', function(){(quadtreeToSFCquadtree.attr("stroke")=="black") ? quadtreeToSFCquadtree.stroke({'color':"red","width":4}) : quadtreeToSFCquadtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(quadtreeToSFCquadtree.attr("stroke")=="black") ? quadtreeToSFCquadtree.stroke({'color':"red","width":6}) : quadtreeToSFCquadtree.stroke({'color':"black","width":2})})
 				draw.text("SFC-quadtree [31]").move(1270,1910).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[31]"] + "<br>" + referencesArray["[31]"] + "<br>" + pdfsArray["[31]"])})
@@ -1704,8 +1742,8 @@
 				draw.polygon('1630,1450 1640,1440 1650,1450, 1640,1460, 1630,1450').fill('black')
 				.on('click', function(){
 					if (quadtreeToIFST.attr("stroke")=="black") {
-						quadtreeToIFST.stroke({'color':"red","width":4})
-						rtreeToIFST.stroke({'color':"red","width":4})
+						quadtreeToIFST.stroke({'color':"red","width":6})
+						rtreeToIFST.stroke({'color':"red","width":6})
 					}
 					else{
 						quadtreeToIFST.stroke({'color':"black","width":2})
@@ -1724,7 +1762,7 @@
 
 				//ST-tree
 				draw.polygon('1750,1950 1760,1940 1770,1950, 1760,1960, 1750,1950').fill('black')
-				.on('click', function(){(quadtreeToSTtree.attr("stroke")=="black") ? quadtreeToSTtree.stroke({'color':"red","width":4}) : quadtreeToSTtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(quadtreeToSTtree.attr("stroke")=="black") ? quadtreeToSTtree.stroke({'color':"red","width":6}) : quadtreeToSTtree.stroke({'color':"black","width":2})})
 				draw.text("ST-tree [79]").move(1770,1940).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[79]"] + "<br>" + referencesArray["[79]"] + "<br>" + pdfsArray["[79]"])})
@@ -1737,7 +1775,7 @@
 
 				//Overlapped Quadtree
 				draw.circle(20).fill('black').move(330,1960)
-				.on('click', function(){(quadtreeToOverlappedQuadtree.attr("stroke")=="black") ? quadtreeToOverlappedQuadtree.stroke({'color':"red","width":4}) : quadtreeToOverlappedQuadtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(quadtreeToOverlappedQuadtree.attr("stroke")=="black") ? quadtreeToOverlappedQuadtree.stroke({'color':"red","width":6}) : quadtreeToOverlappedQuadtree.stroke({'color':"black","width":2})})
 				draw.text("Overlapped Quadtree [143]").move(350,1960).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[143]"] + "<br>" + referencesArray["[143]"] + "<br>" + pdfsArray["[143]"])})
@@ -1750,7 +1788,7 @@
 
 				//Trajstore
 				draw.circle(20).fill('black').move(1250,1990)
-				.on('click', function(){(quadtreeToOverlappedQuadtree.attr("stroke")=="black") ? quadtreeToOverlappedQuadtree.stroke({'color':"red","width":4}) : quadtreeToOverlappedQuadtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(quadtreeToOverlappedQuadtree.attr("stroke")=="black") ? quadtreeToOverlappedQuadtree.stroke({'color':"red","width":6}) : quadtreeToOverlappedQuadtree.stroke({'color':"black","width":2})})
 				draw.text("Trajstore [32]").move(1270,1990).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[32]"] + "<br>" + referencesArray["[32]"] + "<br>" + pdfsArray["[32]"])})
@@ -1763,7 +1801,7 @@
 
 				//Future Quadtree
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(330,2020)
-				.on('click', function(){(quadtreeToFutureQuadtree.attr("stroke")=="black") ? quadtreeToFutureQuadtree.stroke({'color':"red","width":4}) : quadtreeToFutureQuadtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(quadtreeToFutureQuadtree.attr("stroke")=="black") ? quadtreeToFutureQuadtree.stroke({'color':"red","width":6}) : quadtreeToFutureQuadtree.stroke({'color':"black","width":2})})
 				draw.text("Future Quadtree [136]").move(250,2040).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[136]"] + "<br>" + referencesArray["[136]"] + "<br>" + pdfsArray["[136]"])})
@@ -1782,7 +1820,7 @@
 
 				//PH-tree
 				draw.circle(20).fill('black').move(1550,2060)
-				.on('click', function(){(quadtreeToPHtree.attr("stroke")=="black") ? quadtreeToPHtree.stroke({'color':"red","width":4}) : quadtreeToPHtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(quadtreeToPHtree.attr("stroke")=="black") ? quadtreeToPHtree.stroke({'color':"red","width":6}) : quadtreeToPHtree.stroke({'color':"black","width":2})})
 				draw.text("PH-tree [164]").move(1570,2060).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[164]"] + "<br>" + referencesArray["[164]"] + "<br>" + pdfsArray["[164]"])})
@@ -1809,8 +1847,8 @@
 				draw.circle(20).fill('green').stroke({'color':'black','width':2}).move(1400, 2090)
 				.on('click', function(){
 					if (btreeToSWST.attr("stroke")=="black") {
-						btreeToSWST.stroke({'color':"red","width":4})
-						gridToSWST.stroke({'color':"red","width":4})
+						btreeToSWST.stroke({'color':"red","width":6})
+						gridToSWST.stroke({'color':"red","width":6})
 					}
 					else{
 						btreeToSWST.stroke({'color':"black","width":2})
@@ -1831,8 +1869,8 @@
 				draw.polygon('1600,2100 1610,2090 1620,2100, 1610,2110, 1600,2100').fill('black')
 				.on('click', function(){
 					if (btreeToGiki.attr("stroke")=="black") {
-						btreeToGiki.stroke({'color':"red","width":4})
-						quadtreeToGiki.stroke({'color':"red","width":4})
+						btreeToGiki.stroke({'color':"red","width":6})
+						quadtreeToGiki.stroke({'color':"red","width":6})
 					}
 					else{
 						btreeToGiki.stroke({'color':"black","width":2})
@@ -1851,7 +1889,7 @@
 
 				//DITIR
 				draw.circle(20).fill('black').stroke({'color':'red','width':4}).move(1750,2120)
-				.on('click', function(){(btreeToDITIR.attr("stroke")=="black") ? btreeToDITIR.stroke({'color':"red","width":4}) : btreeToDITIR.stroke({'color':"black","width":2})})
+				.on('click', function(){(btreeToDITIR.attr("stroke")=="black") ? btreeToDITIR.stroke({'color':"red","width":6}) : btreeToDITIR.stroke({'color':"black","width":2})})
 				draw.text("DITIR [22]").move(1770,2120).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[22]"] + "<br>" + referencesArray["[22]"] + "<br>" + pdfsArray["[22]"])})
@@ -1870,7 +1908,7 @@
 
 				//Bxtree
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(700,2340)
-				.on('click', function(){(btreeToBxtree.attr("stroke")=="black") ? btreeToBxtree.stroke({'color':"red","width":4}) : btreeToBxtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(btreeToBxtree.attr("stroke")=="black") ? btreeToBxtree.stroke({'color':"red","width":6}) : btreeToBxtree.stroke({'color':"black","width":2})})
 				draw.text("Bxtree [60]").move(650,2360).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[60]"] + "<br>" + referencesArray["[60]"] + "<br>" + pdfsArray["[60]"])})
@@ -1885,8 +1923,8 @@
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1000,2150)
 				.on('click', function(){
 					if (btreeToBdualtree.attr("stroke")=="black") {
-						btreeToBdualtree.stroke({'color':"red","width":4})
-						rtreeToBdualtree.stroke({'color':"red","width":4})
+						btreeToBdualtree.stroke({'color':"red","width":6})
+						rtreeToBdualtree.stroke({'color':"red","width":6})
 					}
 					else{
 						btreeToBdualtree.stroke({'color':"black","width":2})
@@ -1905,7 +1943,7 @@
 
 				//aBy-tree
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1000,2190)
-				.on('click', function(){(btreeToaBytree.attr("stroke")=="black") ? btreeToaBytree.stroke({'color':"red","width":4}) : btreeToaBytree.stroke({'color':"black","width":2})})
+				.on('click', function(){(btreeToaBytree.attr("stroke")=="black") ? btreeToaBytree.stroke({'color':"red","width":6}) : btreeToaBytree.stroke({'color':"black","width":2})})
 				draw.text("aBy-tree [27]").move(1020,2190).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[27]"] + "<br>" + referencesArray["[27]"] + "<br>" + pdfsArray["[27]"])})
@@ -1918,7 +1956,7 @@
 
 				//By-tree
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1000,2220)
-				.on('click', function(){(btreeToBytree.attr("stroke")=="black") ? btreeToBytree.stroke({'color':"red","width":4}) : btreeToBytree.stroke({'color':"black","width":2})})
+				.on('click', function(){(btreeToBytree.attr("stroke")=="black") ? btreeToBytree.stroke({'color':"red","width":6}) : btreeToBytree.stroke({'color':"black","width":2})})
 				draw.text("By-tree [27]").move(1020,2220).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[27]"] + "<br>" + referencesArray["[27]"] + "<br>" + pdfsArray["[27]"])})
@@ -1931,7 +1969,7 @@
 
 				//ST2B-tree
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1000,2250)
-				.on('click', function(){(btreeToST2Btree.attr("stroke")=="black") ? btreeToST2Btree.stroke({'color':"red","width":4}) : btreeToST2Btree.stroke({'color':"black","width":2})})
+				.on('click', function(){(btreeToST2Btree.attr("stroke")=="black") ? btreeToST2Btree.stroke({'color':"red","width":6}) : btreeToST2Btree.stroke({'color':"black","width":2})})
 				draw.text("ST2B-tree [28]").move(1020,2250).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[28]"] + "<br>" + referencesArray["[28]"] + "<br>" + pdfsArray["[28]"])})
@@ -1944,7 +1982,7 @@
 
 				//Bdh-tree
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1000,2280)
-				.on('click', function(){(btreeToBdhTree.attr("stroke")=="black") ? btreeToBdhTree.stroke({'color':"red","width":4}) : btreeToBdhTree.stroke({'color':"black","width":2})})
+				.on('click', function(){(btreeToBdhTree.attr("stroke")=="black") ? btreeToBdhTree.stroke({'color':"red","width":6}) : btreeToBdhTree.stroke({'color':"black","width":2})})
 				draw.text("Bdh-tree [120]").move(1020,2280).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[120]"] + "<br>" + referencesArray["[120]"] + "<br>" + pdfsArray["[120]"])})
@@ -1957,7 +1995,7 @@
 
 				//BBx-index
 				draw.rect(20,20).fill('yellow').stroke({'color':'black','width':2}).move(800,2390)
-				.on('click', function(){(btreeToBBxindex.attr("stroke")=="black") ? btreeToBBxindex.stroke({'color':"red","width":4}) : btreeToBBxindex.stroke({'color':"black","width":2})})
+				.on('click', function(){(btreeToBBxindex.attr("stroke")=="black") ? btreeToBBxindex.stroke({'color':"red","width":6}) : btreeToBBxindex.stroke({'color':"black","width":2})})
 				draw.text("BBx-index [75]").move(820,2390).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[75]"] + "<br>" + referencesArray["[75]"] + "<br>" + pdfsArray["[75]"])})
@@ -1970,7 +2008,7 @@
 
 				//PEB-tree
 				draw.circle(20).fill('blue').stroke({'color':'black','width':2}).move(1350,2340)
-				.on('click', function(){(btreeToPEBtree.attr("stroke")=="black") ? btreeToPEBtree.stroke({'color':"red","width":4}) : btreeToPEBtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(btreeToPEBtree.attr("stroke")=="black") ? btreeToPEBtree.stroke({'color':"red","width":6}) : btreeToPEBtree.stroke({'color':"black","width":2})})
 				draw.text("PEB-tree [76]").move(1370,2340).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[76]"] + "<br>" + referencesArray["[76]"] + "<br>" + pdfsArray["[76]"])})
@@ -1983,7 +2021,7 @@
 
 				//STCB-tree
 				draw.rect(20,20).fill('yellow').stroke({'color':'black','width':2}).move(1200,2420)
-				.on('click', function(){(btreeToSTCBtree.attr("stroke")=="black") ? btreeToSTCBtree.stroke({'color':"red","width":4}) : btreeToSTCBtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(btreeToSTCBtree.attr("stroke")=="black") ? btreeToSTCBtree.stroke({'color':"red","width":6}) : btreeToSTCBtree.stroke({'color':"black","width":2})})
 				draw.text("STCB-tree [78]").move(1220,2420).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[78]"] + "<br>" + referencesArray["[78]"] + "<br>" + pdfsArray["[78]"])})
@@ -1996,7 +2034,7 @@
 
 				//FMI
 				draw.circle(20).fill('black').move(1500,2460)
-				.on('click', function(){(btreeToFMI.attr("stroke")=="black") ? btreeToFMI.stroke({'color':"red","width":4}) : btreeToFMI.stroke({'color':"black","width":2})})
+				.on('click', function(){(btreeToFMI.attr("stroke")=="black") ? btreeToFMI.stroke({'color':"red","width":6}) : btreeToFMI.stroke({'color':"black","width":2})})
 				draw.text("FMI [78]").move(1520,2460).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[78]"] + "<br>" + referencesArray["[78]"] + "<br>" + pdfsArray["[78]"])})
@@ -2009,7 +2047,7 @@
 
 				//CFMI
 				draw.circle(20).fill('black').move(1490,2390)
-				.on('click', function(){(btreeToCFMI.attr("stroke")=="black") ? btreeToCFMI.stroke({'color':"red","width":4}) : btreeToCFMI.stroke({'color':"black","width":2})})
+				.on('click', function(){(btreeToCFMI.attr("stroke")=="black") ? btreeToCFMI.stroke({'color':"red","width":6}) : btreeToCFMI.stroke({'color':"black","width":2})})
 				draw.text("CFMI [78]").move(1510,2390).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[78]"] + "<br>" + referencesArray["[78]"] + "<br>" + pdfsArray["[78]"])})
@@ -2022,7 +2060,7 @@
 
 				//MPB-tree
 				draw.circle(20).fill('blue').stroke({'color':'red','width':4}).move(1500,2490)
-				.on('click', function(){(btreeToMPBtree.attr("stroke")=="black") ? btreeToMPBtree.stroke({'color':"red","width":4}) : btreeToMPBtree.stroke({'color':"black","width":2})})
+				.on('click', function(){(btreeToMPBtree.attr("stroke")=="black") ? btreeToMPBtree.stroke({'color':"red","width":6}) : btreeToMPBtree.stroke({'color':"black","width":2})})
 				draw.text("MPB-tree [56]").move(1520,2490).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[56]"] + "<br>" + referencesArray["[56]"] + "<br>" + pdfsArray["[56]"])})
@@ -2035,7 +2073,7 @@
 
 				//K2-tree
 				draw.rect(20,20).fill('black').move(1200,2530)
-				.on('click', function(){(btreeToK2tree.attr("stroke")=="black") ? btreeToK2tree.stroke({'color':"red","width":4}) : btreeToK2tree.stroke({'color':"black","width":2})})
+				.on('click', function(){(btreeToK2tree.attr("stroke")=="black") ? btreeToK2tree.stroke({'color':"red","width":6}) : btreeToK2tree.stroke({'color':"black","width":2})})
 				draw.text("K2-tree [19]").move(1140,2510).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[19]"] + "<br>" + referencesArray["[19]"] + "<br>" + pdfsArray["[19]"])})
@@ -2048,7 +2086,7 @@
 
 				//SMO
 				draw.circle(20).fill('black').move(1400,2530)
-				.on('click', function(){(btreeToSMO.attr("stroke")=="black") ? btreeToSMO.stroke({'color':"red","width":4}) : btreeToSMO.stroke({'color':"black","width":2})})
+				.on('click', function(){(btreeToSMO.attr("stroke")=="black") ? btreeToSMO.stroke({'color':"red","width":6}) : btreeToSMO.stroke({'color':"black","width":2})})
 				draw.text("SMO [114]").move(1420,2530).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[114]"] + "<br>" + referencesArray["[114]"] + "<br>" + pdfsArray["[114]"])})
@@ -2061,7 +2099,7 @@
 
 				//Predictive Distance Table
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(1250,2570)
-				.on('click', function(){(btreeTopdt.attr("stroke")=="black") ? btreeTopdt.stroke({'color':"red","width":4}) : btreeTopdt.stroke({'color':"black","width":2})})
+				.on('click', function(){(btreeTopdt.attr("stroke")=="black") ? btreeTopdt.stroke({'color':"red","width":6}) : btreeTopdt.stroke({'color':"black","width":2})})
 				draw.text("Predictive Distance Table [62]").move(1080,2590).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[62]"] + "<br>" + referencesArray["[62]"] + "<br>" + pdfsArray["[62]"])})
@@ -2074,7 +2112,7 @@
 
 				//Parinet
 				draw.circle(20).fill('black').move(1250,2610)
-				.on('click', function(){(btreeToParinet.attr("stroke")=="black") ? btreeToParinet.stroke({'color':"red","width":4}) : btreeToParinet.stroke({'color':"black","width":2})})
+				.on('click', function(){(btreeToParinet.attr("stroke")=="black") ? btreeToParinet.stroke({'color':"red","width":6}) : btreeToParinet.stroke({'color':"black","width":2})})
 				draw.text("Parinet [114]").move(1270,2620).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[114]"] + "<br>" + referencesArray["[114]"] + "<br>" + pdfsArray["[114]"])})
@@ -2087,7 +2125,7 @@
 
 				//T-Parinet
 				draw.circle(20).fill('black').move(1350,2570)
-				.on('click', function(){(btreeToTParinet.attr("stroke")=="black") ? btreeToTParinet.stroke({'color':"red","width":4}) : btreeToTParinet.stroke({'color':"black","width":2})})
+				.on('click', function(){(btreeToTParinet.attr("stroke")=="black") ? btreeToTParinet.stroke({'color':"red","width":6}) : btreeToTParinet.stroke({'color':"black","width":2})})
 				draw.text("T-Parinet [117]").move(1370,2570).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[117]"] + "<br>" + referencesArray["[117]"] + "<br>" + pdfsArray["[117]"])})
@@ -2100,7 +2138,7 @@
 
 				//TRIFL
 				draw.circle(20).fill('black').move(1600,2650)
-				.on('click', function(){(btreeToTRIFL.attr("stroke")=="black") ? btreeToTRIFL.stroke({'color':"red","width":4}) : btreeToTRIFL.stroke({'color':"black","width":2})})
+				.on('click', function(){(btreeToTRIFL.attr("stroke")=="black") ? btreeToTRIFL.stroke({'color':"red","width":6}) : btreeToTRIFL.stroke({'color':"black","width":2})})
 				draw.text("TRIFL [137]").move(1620,2650).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[137]"] + "<br>" + referencesArray["[137]"] + "<br>" + pdfsArray["[137]"])})
@@ -2119,7 +2157,7 @@
 
 				//STIG
 				draw.circle(20).fill('black').stroke({'color':'red','width':4}).move(1700,2690)
-				.on('click', function(){(kdtreeToSTIG.attr("stroke")=="black") ? kdtreeToSTIG.stroke({'color':"red","width":4}) : kdtreeToSTIG.stroke({'color':"black","width":2})})
+				.on('click', function(){(kdtreeToSTIG.attr("stroke")=="black") ? kdtreeToSTIG.stroke({'color':"red","width":6}) : kdtreeToSTIG.stroke({'color':"black","width":2})})
 				draw.text("STIG [39]").move(1720,2690).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[39]"] + "<br>" + referencesArray["[39]"] + "<br>" + pdfsArray["[39]"])})
@@ -2142,8 +2180,8 @@
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(680,2020)
 				.on('click', function(){
 					if (dualityToSTRIPES.attr("stroke")=="black") {
-						dualityToSTRIPES.stroke({'color':"red","width":4})
-						quadtreeToSTRIPES.stroke({'color':"red","width":4})
+						dualityToSTRIPES.stroke({'color':"red","width":6})
+						quadtreeToSTRIPES.stroke({'color':"red","width":6})
 					}
 					else{
 						dualityToSTRIPES.stroke({'color':"black","width":2})
@@ -2162,7 +2200,7 @@
 
 				//Kinetic+Duality
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(450,2170)
-				.on('click', function(){(dualityToKineticDuality.attr("stroke")=="black") ? dualityToKineticDuality.stroke({'color':"red","width":4}) : dualityToKineticDuality.stroke({'color':"black","width":2})})
+				.on('click', function(){(dualityToKineticDuality.attr("stroke")=="black") ? dualityToKineticDuality.stroke({'color':"red","width":6}) : dualityToKineticDuality.stroke({'color':"black","width":2})})
 				draw.text("Kinetic+Duality [2]").move(470,2170).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[2]"] + "<br>" + referencesArray["[2]"] + "<br>" + pdfsArray["[2]"])})
@@ -2175,7 +2213,7 @@
 
 				//SV-Model
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(520,2190)
-				.on('click', function(){(dualityToSVModel.attr("stroke")=="black") ? dualityToSVModel.stroke({'color':"red","width":4}) : dualityToSVModel.stroke({'color':"black","width":2})})
+				.on('click', function(){(dualityToSVModel.attr("stroke")=="black") ? dualityToSVModel.stroke({'color':"red","width":6}) : dualityToSVModel.stroke({'color':"black","width":2})})
 				draw.text("SV-Model [30]").move(540,2190).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[30]"] + "<br>" + referencesArray["[30]"] + "<br>" + pdfsArray["[30]"])})
@@ -2190,8 +2228,8 @@
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(580,2290)
 				.on('click', function(){
 					if (btreeToMBindex.attr("stroke")=="black") {
-						btreeToMBindex.stroke({'color':"red","width":4})
-						dualityToMBindex.stroke({'color':"red","width":4})
+						btreeToMBindex.stroke({'color':"red","width":6})
+						dualityToMBindex.stroke({'color':"red","width":6})
 					}
 					else{
 						btreeToMBindex.stroke({'color':"black","width":2})
@@ -2210,7 +2248,7 @@
 
 				//PSI
 				draw.circle(20).fill('pink').stroke({'color':'black','width':2}).move(520,2275)
-				.on('click', function(){(dualityToPSI.attr("stroke")=="black") ? dualityToPSI.stroke({'color':"red","width":4}) : dualityToPSI.stroke({'color':"black","width":2})})
+				.on('click', function(){(dualityToPSI.attr("stroke")=="black") ? dualityToPSI.stroke({'color':"red","width":6}) : dualityToPSI.stroke({'color':"black","width":2})})
 				draw.text("PSI [108]").move(440,2275).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[108]"] + "<br>" + referencesArray["[108]"] + "<br>" + pdfsArray["[108]"])})
@@ -2229,7 +2267,7 @@
 
 				//DTOSS
 				draw.circle(20).fill('blue').stroke({'color':'red','width':4}).move(1700,2210)
-				.on('click', function(){(tossitToDTOSS.attr("stroke")=="black") ? tossitToDTOSS.stroke({'color':"red","width":4}) : tossitToDTOSS.stroke({'color':"black","width":2})})
+				.on('click', function(){(tossitToDTOSS.attr("stroke")=="black") ? tossitToDTOSS.stroke({'color':"red","width":6}) : tossitToDTOSS.stroke({'color':"black","width":2})})
 				draw.text("DTOSS [5]").move(1720,2210).font({fill:'blue', family: 'Arial'})
 				.on('click', function(){window.open("","","width=800,height=800,resizable,scrollbars=yes,status=1").
 					document.write(linksArray["[5]"] + "<br>" + referencesArray["[5]"] + "<br>" + pdfsArray["[5]"])})
